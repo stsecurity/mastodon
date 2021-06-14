@@ -37,4 +37,9 @@ class AdminMailerPreview < ActionMailer::Preview
   def auto_close_registrations
     AdminMailer.with(recipient: Account.first).auto_close_registrations
   end
+
+  # Preview this email at http://localhost:3000/rails/mailers/admin_mailer/new_appeal
+  def new_appeal
+    AdminMailer.new_appeal(Account.first, Appeal.first)
+  end
 end
