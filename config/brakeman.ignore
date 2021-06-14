@@ -171,6 +171,36 @@
       "note": ""
     },
     {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "afad51718ae373b2f19d2513029fd2afccf58b9148e475934bc6a162ee33c352",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/admin/disputes/appeals/_appeal.html.haml",
+      "line": 7,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "t((Unresolved Model).new.strike.action, :scope => \"admin.strikes.actions\", :name => content_tag(:span, (Unresolved Model).new.strike.account.username, :class => \"username\"), :target => content_tag(:span, (Unresolved Model).new.account.acct, :class => \"target\"))",
+      "render_path": [
+        {
+          "type": "template",
+          "name": "admin/disputes/appeals/index",
+          "line": 16,
+          "file": "app/views/admin/disputes/appeals/index.html.haml",
+          "rendered": {
+            "name": "admin/disputes/appeals/_appeal",
+            "file": "app/views/admin/disputes/appeals/_appeal.html.haml"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "admin/disputes/appeals/_appeal"
+      },
+      "user_input": "(Unresolved Model).new.strike",
+      "confidence": "Weak",
+      "note": ""
+    },
+    {
       "warning_type": "Redirect",
       "warning_code": 18,
       "fingerprint": "ba568ac09683f98740f663f3d850c31785900215992e8c090497d359a2563d50",

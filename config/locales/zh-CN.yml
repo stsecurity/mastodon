@@ -1428,6 +1428,7 @@ zh-CN:
       in_reply_not_found: 你回复的嘟文似乎不存在
     open_in_web: 在站内打开
     over_character_limit: 超过了 %{max} 字的限制
+    over_uncut_character_limit: 超过 %{max} 字请使用CW
     pin_errors:
       direct: 仅对被提及的用户可见的帖子不能被置顶
       limit: 你所固定的嘟文数量已达到上限
@@ -1584,6 +1585,9 @@ zh-CN:
     contrast: Mastodon（高对比度）
     default: Mastodon（暗色主题）
     mastodon-light: Mastodon（亮色主题）
+    linernotes_dark: Linernotes Dark
+    fault: fault
+    lilymagic: lilymagic
   time:
     formats:
       default: "%Y年%m月%d日 %H:%M"

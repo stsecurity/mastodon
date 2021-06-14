@@ -1256,10 +1256,12 @@
       title: Velkommen ombord, %{name}!
   users:
     follow_limit_reached: Du kan ikke følge mer enn %{limit} personer
+    generic_access_help_html: Problemer med å få tilgang til din konto? Du kan kontakte %{email} for assistanse
     invalid_otp_token: Ugyldig to-faktorkode
     otp_lost_help_html: Hvis du mistet tilgangen til begge deler, kan du komme i kontakt med %{email}
     seamless_external_login: Du er logget inn via en ekstern tjeneste, så passord og e-post innstillinger er ikke tilgjengelige.
     signed_in_as: 'Innlogget som:'
+    suspicious_sign_in_confirmation: Du ser ikke ut til å ha logget inn fra denne enheten før, og du har ikke logget inn en stund, så vi sender en sikkerhetskode til din e-postadresse for å bekrefte at det er deg.
   verification:
     explanation_html: 'Du kan <strong>bekrefte at du selv er eieren av lenkene i din profilmetadata</strong>. For å gjøre det, må det tillenkede nettstedet inneholde en lenke som fører tilbake til Mastodon-profilen din. Lenken tilbake <strong>må</strong> ha en <code>rel="me"</code>-attributt. Tekstinnholdet til lenken er irrelevant. Her er et eksempel:'
     verification: Bekreftelse

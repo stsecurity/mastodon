@@ -44,7 +44,7 @@
   "account.unblock_short": "Разблокировать",
   "account.unendorse": "Не рекомендовать в профиле",
   "account.unfollow": "Отписаться",
-  "account.unmute": "Не игнорировать @{name}",
+  "account.unmute": "Убрать {name} из игнорируемых",
   "account.unmute_notifications": "Показывать уведомления от @{name}",
   "account.unmute_short": "Не игнорировать",
   "account_note.placeholder": "Текст заметки",

@@ -529,6 +529,7 @@ da:
       known_accounts:
         one: "%{count} kendt konto"
         other: "%{count} kendte konti"
+        zero: Ingen kendt konto
       moderation:
         all: Alle
         limited: Begrænset
