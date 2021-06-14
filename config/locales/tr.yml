@@ -574,6 +574,7 @@ tr:
       known_accounts:
         one: "%{count} bilinen hesap"
         other: "%{count} bilinen hesap"
+        zero: Bilinen hesap yok
       moderation:
         all: Tümü
         limited: Sınırlı
@@ -1033,6 +1034,7 @@ tr:
         shared_by_over_week:
           one: Geçen hafta bir kişi paylaştı
           other: Geçen hafta %{count} kişi paylaştı
+          zero: Geçen hafta kimse paylaşmadı
         title: Öne çıkan bağlantılar
         usage_comparison: Bugün %{today} kere paylaşıldı, dün %{yesterday} kere paylaşılmıştı
       not_allowed_to_trend: Öne çıkma izni yok

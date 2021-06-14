@@ -171,5 +171,19 @@ module Admin
         'reject'
       end
     end
+
+    def form_account_batch_params
+      params.require(:form_account_batch).permit(:action, account_ids: [])
+    end
+
+    def action_from_button
+      if params[:suspend]
+        'suspend'
+      elsif params[:approve]
+        'approve'
+      elsif params[:reject]
+        'reject'
+      end
+    end
   end
 end

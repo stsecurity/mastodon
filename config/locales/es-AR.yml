@@ -574,6 +574,7 @@ es-AR:
       known_accounts:
         one: "%{count} cuenta conocida"
         other: "%{count} cuentas conocidas"
+        zero: Ninguna cuenta conocida
       moderation:
         all: Todas
         limited: Limitadas
@@ -1031,8 +1032,9 @@ es-AR:
         publishers:
           no_publisher_selected: No se cambió ningún medio, ya que ninguno fue seleccionado
         shared_by_over_week:
-          one: Compartido por una persona durante la última semana
-          other: Compartido por %{count} personas durante la última semana
+          one: Compartido por una persona en la última semana
+          other: Compartido por %{count} personas en la última semana
+          zero: Compartido por nadie en la última semana
         title: Enlaces en tendencia
         usage_comparison: Compartido %{today} veces hoy, comparado con la/s %{yesterday} vez/veces de ayer
       not_allowed_to_trend: No se permite la tendencia
@@ -1255,7 +1257,6 @@ es-AR:
     status:
       account_status: Estado de la cuenta
       confirming: Esperando confirmación de correo electrónico.
-      functional: Tu cuenta está totalmente operativa.
       pending: Tu solicitud está pendiente de revisión por nuestra administración. Eso puede tardar algún tiempo. Si se aprueba tu solicitud, vas a recibir un correo electrónico.
       redirecting_to: Tu cuenta se encuentra inactiva porque está siendo redirigida a %{acct}.
       self_destruct: Como %{domain} está en proceso de cierre, solo tendrás acceso limitado a tu cuenta.
