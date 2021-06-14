@@ -715,6 +715,18 @@ body,
       text-decoration: underline;
     }
   }
+
+  &--inactive {
+    .log-entry__title {
+      text-decoration: line-through;
+    }
+
+    a,
+    .username,
+    .target {
+      color: $darker-text-color;
+    }
+  }
 }
 
 .strike-entry {
@@ -1400,6 +1412,17 @@ a.sparkline {
       &__header {
         font-weight: 600;
         padding: 4px 0;
+      }
+
+      a {
+        color: $ui-highlight-color;
+        text-decoration: none;
+
+        &:hover,
+        &:focus,
+        &:active {
+          text-decoration: underline;
+        }
       }
     }
 

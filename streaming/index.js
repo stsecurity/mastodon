@@ -310,7 +310,7 @@ const startServer = async () => {
       });
     }
 
-    subs[channel].push(callback);
+    redisSubscribeClient.subscribe(channel, callback);
   };
 
   /**

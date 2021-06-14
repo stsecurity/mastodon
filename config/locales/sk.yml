@@ -1382,5 +1382,6 @@ sk:
     otp_lost_help_html: Pokiaľ si stratil/a prístup k obom, môžeš dať vedieť %{email}
     rate_limited: Príliš veľa pokusov o overenie, skús to znova neskôr.
     signed_in_as: 'Prihlásená/ý ako:'
+    suspicious_sign_in_confirmation: Vyzerá to, že si sa predtým z tohto zariadenia ešte neprihlasoval/a, takže ti na tvoju emailovú adresu pošleme bezpečnostný kód, aby sa potvrdilo, že si to ty.
   verification:
     verification: Overenie

@@ -456,6 +456,8 @@ fi:
         types:
           mx: MX-tietue
       domain: Verkkotunnus
+      empty: Sähköpostiosoitteita ei ole tällä hetkellä estetty.
+      from_html: käyttäjältä %{domain}
       new:
         create: Lisää verkkotunnus
         resolve: Resolvoi verkkotunnus

@@ -574,6 +574,7 @@ pt-PT:
       known_accounts:
         one: "%{count} conta conhecida"
         other: "%{count} contas conhecidas"
+        zero: Nenhuma conta conhecida
       moderation:
         all: Todas
         limited: Limitadas

@@ -1803,6 +1803,7 @@
     otp_lost_help_html: Hvis du mistet tilgangen til begge deler, kan du komme i kontakt med %{email}
     rate_limited: For mange autentiseringsforsøk, prøv igjen senere.
     signed_in_as: 'Innlogget som:'
+    suspicious_sign_in_confirmation: Du ser ikke ut til å ha logget inn fra denne enheten før, og du har ikke logget inn en stund, så vi sender en sikkerhetskode til din e-postadresse for å bekrefte at det er deg.
   verification:
     extra_instructions_html: <strong>Tips:</strong> Lenken på din nettside kan være usynlig. Den viktige delen er <code>rel="me"</code> som sikrer at nettsteder med brukergenerert innhold ikke kan utgi seg for å være deg. Du kan til og med bruke en <code>link</code> lenke i sidens topptekst i stedet for <code>a</code>, men HTML-koden må være tilgjengelig uten å kjøre JavaScript.
     here_is_how: Slik gjør du

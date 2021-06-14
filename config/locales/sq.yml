@@ -569,6 +569,7 @@ sq:
       known_accounts:
         one: "%{count} llogari e njohur"
         other: "%{count} llogari të njohura"
+        zero: Pa llogari të njohur
       moderation:
         all: Krejt
         limited: Të kufizuarat

@@ -574,6 +574,7 @@ is:
       known_accounts:
         one: "%{count} þekktur notandaaðgangur"
         other: "%{count} þekktir notendaaðgangar"
+        zero: Enginn þekktur notandaaðgangur
       moderation:
         all: Allt
         limited: Takmarkað
@@ -1035,6 +1036,7 @@ is:
         shared_by_over_week:
           one: Deilt af einum aðila síðustu vikuna
           other: Deilt af %{count} aðilum síðustu vikuna
+          zero: Ekki deilt af neinum aðila síðustu vikuna
         title: Vinsælir tenglar
         usage_comparison: Deilt %{today} sinnum í dag, samanborið við %{yesterday} í gær
       not_allowed_to_trend: Ekki leyft að verða vinsælt
@@ -1259,7 +1261,6 @@ is:
     status:
       account_status: Staða notandaaðgangs
       confirming: Bíð eftir að staðfestingu tölvupósts sé lokið.
-      functional: Notandaaðgangurinn þinn er með fulla virkni.
       pending: Umsóknin þín bíður eftir að starfsfólkið okkar fari yfir hana. Það gæti tekið nokkurn tíma. Þú munt fá tölvupóst ef umsóknin er samþykkt.
       redirecting_to: Notandaaðgangurinn þinn er óvirkur vegna þess að hann endurbeinist á %{acct}.
       self_destruct: Þar sem %{domain} er að hætta starfsemi, muntu aðeins halda takmörkuðum aðgangi að aðgangnum þínum.

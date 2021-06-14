@@ -161,6 +161,10 @@ class ActivityPub::Activity::Create < ActivityPub::Activity
     @delivered_to_account ||= Account.find(@options[:delivered_to_account_id])
   end
 
+  def delivered_to_account
+    @delivered_to_account ||= Account.find(@options[:delivered_to_account_id])
+  end
+
   def attach_tags(status)
     @tags.each do |tag|
       status.tags << tag

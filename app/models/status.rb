@@ -76,6 +76,8 @@ class Status < ApplicationRecord
     belongs_to :reblog, foreign_key: 'reblog_of_id', inverse_of: :reblogs
   end
 
+  has_many :edits, class_name: 'StatusEdit', inverse_of: :status, dependent: :destroy
+
   has_many :favourites, inverse_of: :status, dependent: :destroy
   has_many :bookmarks, inverse_of: :status, dependent: :destroy
   has_many :reblogs, foreign_key: 'reblog_of_id', class_name: 'Status', inverse_of: :reblog, dependent: :destroy

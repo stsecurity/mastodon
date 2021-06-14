@@ -1817,6 +1817,7 @@ zh-CN:
     errors:
       in_reply_not_found: 你回复的嘟文似乎不存在
     over_character_limit: 超过了 %{max} 字的限制
+    over_uncut_character_limit: 超过 %{max} 字请使用CW
     pin_errors:
       direct: 仅对被提及的用户可见的帖子不能被置顶
       limit: 你置顶的嘟文数量已达上限
