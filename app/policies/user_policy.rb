@@ -17,6 +17,14 @@ class UserPolicy < ApplicationPolicy
     role.can?(:manage_roles) && role.overrides?(record.role)
   end
 
+  def disable_sign_in_token_auth?
+    staff?
+  end
+
+  def enable_sign_in_token_auth?
+    staff?
+  end
+
   def confirm?
     role.can?(:manage_user_access) && !record.confirmed?
   end
