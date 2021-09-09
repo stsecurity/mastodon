@@ -270,12 +270,19 @@
   dependencies:
     "@babel/types" "^7.16.7"
 
-"@babel/helper-split-export-declaration@^7.12.13", "@babel/helper-split-export-declaration@^7.14.5":
+"@babel/helper-split-export-declaration@^7.14.5":
   version "7.14.5"
   resolved "https://registry.yarnpkg.com/@babel/helper-split-export-declaration/-/helper-split-export-declaration-7.14.5.tgz#22b23a54ef51c2b7605d851930c1976dd0bc693a"
   integrity sha512-hprxVPu6e5Kdp2puZUmvOGjaLv9TCe58E/Fl6hRq4YiVQxIcNvuq6uTM2r1mT/oPskuS9CgR+I94sqAYv0NGKA==
   dependencies:
     "@babel/types" "^7.14.5"
+
+"@babel/helper-split-export-declaration@^7.15.4":
+  version "7.15.4"
+  resolved "https://registry.yarnpkg.com/@babel/helper-split-export-declaration/-/helper-split-export-declaration-7.15.4.tgz#aecab92dcdbef6a10aa3b62ab204b085f776e257"
+  integrity sha512-HsFqhLDZ08DxCpBdEVtKmywj6PQbwnF6HHybur0MAnkAKnlS6uHkwnmRIkElB2Owpfb4xL4NwDmDLFubueDXsw==
+  dependencies:
+    "@babel/types" "^7.15.4"
 
 "@babel/helper-validator-identifier@^7.12.11":
   version "7.12.11"
