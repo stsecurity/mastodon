@@ -270,6 +270,13 @@
   dependencies:
     "@babel/types" "^7.16.7"
 
+"@babel/helper-skip-transparent-expression-wrappers@^7.15.4":
+  version "7.15.4"
+  resolved "https://registry.yarnpkg.com/@babel/helper-skip-transparent-expression-wrappers/-/helper-skip-transparent-expression-wrappers-7.15.4.tgz#707dbdba1f4ad0fa34f9114fc8197aec7d5da2eb"
+  integrity sha512-BMRLsdh+D1/aap19TycS4eD1qELGrCBJwzaY9IE8LrpJtJb+H7rQkPIdsfgnMtLBA6DJls7X9z93Z4U8h7xw0A==
+  dependencies:
+    "@babel/types" "^7.15.4"
+
 "@babel/helper-split-export-declaration@^7.14.5":
   version "7.14.5"
   resolved "https://registry.yarnpkg.com/@babel/helper-split-export-declaration/-/helper-split-export-declaration-7.14.5.tgz#22b23a54ef51c2b7605d851930c1976dd0bc693a"
