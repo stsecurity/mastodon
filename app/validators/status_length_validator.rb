@@ -2,7 +2,7 @@
 
 class StatusLengthValidator < ActiveModel::Validator
   MAX_CHARS = 3000
-  #MAX_UNCUT_CHARS = 500
+  MAX_UNCUT_CHARS = 500
   URL_PLACEHOLDER_CHARS = 23
   URL_PLACEHOLDER = 'x' * 23
 
