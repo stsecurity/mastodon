@@ -13,6 +13,8 @@ class StatusLengthValidator < ActiveModel::Validator
     status.errors.add(:text, I18n.t('statuses.over_character_limit', max: MAX_CHARS)) if too_long?
     #status.errors.add(:text, I18n.t('statuses.over_uncut_character_limit', max: MAX_UNCUT_CHARS)) if too_long_uncut?
 
+  end
+
   private
 
   def too_long?
