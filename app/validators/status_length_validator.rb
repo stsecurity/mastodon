@@ -32,7 +32,7 @@ class StatusLengthValidator < ActiveModel::Validator
   end
 
   def countable_spoiler_length
-    status.spoiler_text.mb_chars.grapheme_length
+    @status.spoiler_text.mb_chars.grapheme_length
   end
 
   def total_text
