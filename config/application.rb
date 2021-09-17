@@ -143,6 +143,7 @@ module Mastodon
       :vi,
       :zgh,
       :'zh-CN',
+      :'zh-YR',
       :'zh-HK',
       :'zh-TW',
     ]
