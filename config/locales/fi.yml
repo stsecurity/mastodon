@@ -457,6 +457,8 @@ fi:
         types:
           mx: MX tietue
       domain: Verkkotunnus
+      empty: Sähköpostiosoitteita ei ole tällä hetkellä estetty.
+      from_html: käyttäjältä %{domain}
       new:
         create: Lisää verkkotunnus
         resolve: Ratkaise verkkotunnus
@@ -1549,6 +1551,7 @@ fi:
   users:
     follow_limit_reached: Et voi seurata yli %{limit} henkilöä
     invalid_otp_token: Virheellinen kaksivaiheisen todentamisen koodi
+    invalid_sign_in_token: Virheellinen turvakoodi
     otp_lost_help_html: Jos sinulla ei ole pääsyä kumpaankaan, voit ottaa yhteyttä osoitteeseen %{email}
     seamless_external_login: Olet kirjautunut ulkoisen palvelun kautta, joten salasana- ja sähköpostiasetukset eivät ole käytettävissä.
     signed_in_as: 'Kirjautunut henkilönä:'

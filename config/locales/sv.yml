@@ -413,6 +413,9 @@ sv:
         unavailable: Ej tillgänglig
       delivery_available: Leverans är tillgängligt
       empty: Inga domäner hittades.
+      known_accounts:
+        one: "%{count} känt konto"
+        other: "%{count} kända konton"
       moderation:
         all: Alla
         limited: Begränsad
@@ -1295,7 +1298,9 @@ sv:
       title: Välkommen ombord, %{name}!
   users:
     follow_limit_reached: Du kan inte följa fler än %{limit} personer
+    generic_access_help_html: Har du problem med att komma åt ditt konto? Du kan komma i kontakt med %{email} för assistans
     invalid_otp_token: Ogiltig tvåfaktorskod
+    invalid_sign_in_token: Ogiltig säkerhetskod
     otp_lost_help_html: Om du förlorat åtkomst till båda kan du komma i kontakt med %{email}
     seamless_external_login: Du är inloggad via en extern tjänst, så lösenord och e-postinställningar är inte tillgängliga.
     signed_in_as: 'Inloggad som:'

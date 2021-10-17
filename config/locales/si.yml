@@ -73,6 +73,7 @@ si:
       moderation:
         active: සක්‍රීයයි
         all: සියල්ල
+        silenced: සීමාසහිත
         suspended: අත්හිටුවන ලදි
       most_recent_ip: වඩා මෑත අ.ජා.කෙ.(IP)
       perform_full_suspension: අත්හිටුවන්න

@@ -6,7 +6,7 @@ fr:
       send_instructions: Vous allez recevoir par courriel les instructions nécessaires à la confirmation de votre compte dans quelques minutes. Veuillez, dans le cas où vous ne recevriez pas ce message, vérifier votre dossier d’indésirables.
       send_paranoid_instructions: Si votre adresse électronique existe dans notre base de données, vous allez bientôt recevoir un courriel contenant les instructions de confirmation de votre compte. Veuillez, dans le cas où vous ne recevriez pas ce message, vérifier votre dossier d’indésirables.
     failure:
-      already_authenticated: Vous êtes déjà connecté⋅e.
+      already_authenticated: Vous êtes déjà connecté.
       inactive: Votre compte n’est pas encore activé.
       invalid: "%{authentication_keys} ou mot de passe invalide."
       last_attempt: Vous avez droit à une dernière tentative avant que votre compte ne soit verrouillé.
@@ -27,12 +27,12 @@ fr:
         title: Vérifiez l’adresse courriel
       email_changed:
         explanation: 'L’adresse courriel de votre compte est en cours de modification pour devenir :'
-        extra: Si vous n’avez pas changé votre adresse courriel, il est probable que quelqu’un ait eu accès à votre compte. Veuillez changer votre mot de passe immédiatement ou contacter l’administrateur·rice du serveur si vous êtes bloqué·e hors de votre compte.
+        extra: Si vous n’avez pas changé votre adresse courriel, il est probable que quelqu’un ait eu accès à votre compte. Veuillez changer votre mot de passe immédiatement ou contacter l’administrateur du serveur si vous êtes bloqué hors de votre compte.
         subject: 'Mastodon : Courriel modifié'
         title: Nouvelle adresse courriel
       password_change:
         explanation: Le mot de passe de votre compte a été changé.
-        extra: Si vous n’avez pas changé votre mot de passe, il est probable que quelqu’un ait eu accès à votre compte. Veuillez changer votre mot de passe immédiatement ou contacter l’administrateur·rice du serveur si vous êtes bloqué·e hors de votre compte.
+        extra: Si vous n’avez pas changé votre mot de passe, il est probable que quelqu’un ait eu accès à votre compte. Veuillez changer votre mot de passe immédiatement ou contacter l’administrateur du serveur si vous êtes bloqué hors de votre compte.
         subject: 'Mastodon : Votre mot de passe a été modifié avec succès'
         title: Mot de passe modifié
       reconfirmation_instructions:
@@ -97,8 +97,8 @@ fr:
       updated: Votre compte a été modifié avec succès.
     sessions:
       already_signed_out: Déconnecté·e.
-      signed_in: Connecté·e.
-      signed_out: Déconnecté·e.
+      signed_in: Connecté.
+      signed_out: Déconnecté.
     unlocks:
       send_instructions: Vous allez recevoir les instructions nécessaires au déverrouillage de votre compte dans quelques instants. Veuillez, dans le cas où vous ne recevriez pas ce message, vérifier votre dossier d’indésirables.
       send_paranoid_instructions: Si votre compte existe, vous allez bientôt recevoir un courriel contenant les instructions pour le déverrouiller. Veuillez, dans le cas où vous ne recevriez pas ce message, vérifier votre dossier d’indésirables.
@@ -111,5 +111,5 @@ fr:
       not_found: n’a pas été trouvé
       not_locked: n’était pas verrouillé
       not_saved:
-        one: 'Une erreur a empêché ce·tte %{resource} d’être sauvegardé·e :'
-        other: "%{count} erreurs ont empêché %{resource} d’être sauvegardé⋅e :"
+        one: 'Une erreur a empêché cette %{resource} d’être sauvegardé :'
+        other: "%{count} erreurs ont empêché %{resource} d’être sauvegardé :"
