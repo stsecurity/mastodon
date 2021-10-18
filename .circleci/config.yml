@@ -122,11 +122,16 @@ jobs:
           command: ./bin/rails db:create
           name: Create database
       - run:
-          command: ./bin/rails db:migrate VERSION=20171010025614
-          name: Run migrations up to v2.0.0
+          command: sudo apt-get install -y ffmpeg imagemagick libpam-dev
+          name: Install additional system dependencies
       - run:
-          command: ./bin/rails tests:migrations:populate_v2
-          name: Populate database with test data
+          command: bundle config with 'pam_authentication'
+          name: Enable PAM authentication
+      - install-ruby-dependencies:
+          ruby-version: << parameters.ruby-version >>
+      - attach_workspace:
+          at: .
+      - wait-db
       - run:
           command: ./bin/rails db:migrate VERSION=20180514140000
           name: Run migrations up to v2.4.0
