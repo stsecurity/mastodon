@@ -1,5 +1,4 @@
-Changelog
-=========
+# Changelog
 
 All notable changes to this project will be documented in this file.
 
@@ -291,11 +290,13 @@ All notable changes to this project will be documented in this file.
 - Fix handling of recursive toots in WebUI ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/17041))
 
 ## [3.4.3] - 2021-11-06
+
 ### Fixed
 
 - Fix login being broken due to inaccurately applied backport fix in 3.4.2 ([Gargron](https://github.com/mastodon/mastodon/commit/5c47a18c8df3231aa25c6d1f140a71a7fac9cbf9))
 
 ## [3.4.2] - 2021-11-06
+
 ### Added
 
 - Add `configuration` attribute to `GET /api/v1/instance` ([Gargron](https://github.com/mastodon/mastodon/pull/16485))
@@ -339,6 +340,7 @@ All notable changes to this project will be documented in this file.
 - Fix revoking a specific session not working ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/16943))
 
 ## [3.4.1] - 2021-06-03
+
 ### Added
 
 - Add new emoji assets from Twemoji 13.1.0 ([Gargron](https://github.com/mastodon/mastodon/pull/16345))
@@ -358,6 +360,7 @@ All notable changes to this project will be documented in this file.
 - Fix mailer jobs for deleted notifications erroring out ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/16294))
 
 ## [3.4.0] - 2021-05-16
+
 ### Added
 
 - **Add follow recommendations for onboarding** ([Gargron](https://github.com/mastodon/mastodon/pull/15945), [Gargron](https://github.com/mastodon/mastodon/pull/16161), [Gargron](https://github.com/mastodon/mastodon/pull/16060), [Gargron](https://github.com/mastodon/mastodon/pull/16077), [Gargron](https://github.com/mastodon/mastodon/pull/16078), [Gargron](https://github.com/mastodon/mastodon/pull/16160), [Gargron](https://github.com/mastodon/mastodon/pull/16079), [noellabo](https://github.com/mastodon/mastodon/pull/16044), [noellabo](https://github.com/mastodon/mastodon/pull/16045), [Gargron](https://github.com/mastodon/mastodon/pull/16152), [Gargron](https://github.com/mastodon/mastodon/pull/16153), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/16082), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/16173), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/16159), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/16189))
@@ -393,7 +396,7 @@ All notable changes to this project will be documented in this file.
   - This method allows an app through which a user signed-up to request a new confirmation e-mail to be sent, or to change the e-mail of the account before it is confirmed
 - Add `GET /api/v1/accounts/lookup` to REST API ([Gargron](https://github.com/mastodon/mastodon/pull/15740), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/15750))
   - This method allows to quickly convert a username of a known account to an ID that can be used with the REST API, or to check if a username is available
-  for sign-up
+    for sign-up
 - Add `policy` param to `POST /api/v1/push/subscriptions` in REST API ([Gargron](https://github.com/mastodon/mastodon/pull/16040))
   - This param allows an app to control from whom notifications should be delivered as push notifications to the app
 - Add `details` to error response for `POST /api/v1/accounts` in REST API ([Gargron](https://github.com/mastodon/mastodon/pull/15803))
@@ -503,6 +506,7 @@ All notable changes to this project will be documented in this file.
 - Fix app name, website and redirect URIs not having a maximum length ([Gargron](https://github.com/mastodon/mastodon/pull/16042))
 
 ## [3.3.0] - 2020-12-27
+
 ### Added
 
 - **Add hotkeys for audio/video control in web UI** ([Gargron](https://github.com/mastodon/mastodon/pull/15158), [Gargron](https://github.com/mastodon/mastodon/pull/15198))
@@ -679,6 +683,7 @@ All notable changes to this project will be documented in this file.
 - Fix resolving accounts sometimes creating duplicate records for a given ActivityPub identifier ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/15364))
 
 ## [3.2.2] - 2020-12-19
+
 ### Added
 
 - Add `tootctl maintenance fix-duplicates` ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/14860), [Gargron](https://github.com/mastodon/mastodon/pull/15223))
@@ -705,6 +710,7 @@ All notable changes to this project will be documented in this file.
 - Fix resolving accounts sometimes creating duplicate records for a given ActivityPub identifier ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/15364))
 
 ## [3.2.1] - 2020-10-19
+
 ### Added
 
 - Add support for latest HTTP Signatures spec draft ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/14556))
@@ -734,6 +740,7 @@ All notable changes to this project will be documented in this file.
 - Fix files served as `application/octet-stream` being rejected without attempting mime type detection ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/14452))
 
 ## [3.2.0] - 2020-07-27
+
 ### Added
 
 - Add `SMTP_SSL` environment variable ([OmmyZhang](https://github.com/mastodon/mastodon/pull/14309))
@@ -869,7 +876,7 @@ All notable changes to this project will be documented in this file.
 - Fix unique username constraint for local users not being enforced in database ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/14099))
 - Fix unnecessary gap under video modal in web UI ([mfmfuyu](https://github.com/mastodon/mastodon/pull/14098))
 - Fix 2FA and sign in token pages not respecting user locale ([mfmfuyu](https://github.com/mastodon/mastodon/pull/14087))
-- Fix unapproved users being able to view profiles when in limited-federation mode *and* requiring approval for sign-ups ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/14093))
+- Fix unapproved users being able to view profiles when in limited-federation mode _and_ requiring approval for sign-ups ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/14093))
 - Fix initial audio volume not corresponding to what's displayed in audio player in web UI ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/14057))
 - Fix timelines sometimes jumping when closing modals in web UI ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/14019))
 - Fix memory usage of downloading remote files ([Gargron](https://github.com/mastodon/mastodon/pull/14184), [Gargron](https://github.com/mastodon/mastodon/pull/14181), [noellabo](https://github.com/mastodon/mastodon/pull/14356))
@@ -887,6 +894,7 @@ All notable changes to this project will be documented in this file.
   - Clear out media attachments in a separate worker (slow)
 
 ## [3.1.5] - 2020-07-07
+
 ### Security
 
 - Fix media attachment enumeration ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/14254))
@@ -894,6 +902,7 @@ All notable changes to this project will be documented in this file.
 - Fix other sessions not being logged out on password change ([Gargron](https://github.com/mastodon/mastodon/pull/14252))
 
 ## [3.1.4] - 2020-05-14
+
 ### Added
 
 - Add `vi` to available locales ([taicv](https://github.com/mastodon/mastodon/pull/13542))
@@ -932,7 +941,7 @@ All notable changes to this project will be documented in this file.
 - Fix regression in `tootctl media remove-orphans` ([Gargron](https://github.com/mastodon/mastodon/pull/13405))
 - Fix old unique jobs digests not having been cleaned up ([Gargron](https://github.com/mastodon/mastodon/pull/13683))
 - Fix own following/followers not showing muted users ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/13614))
-- Fix list of followed people ignoring sorting on Follows & Followers page  ([taras2358](https://github.com/mastodon/mastodon/pull/13676))
+- Fix list of followed people ignoring sorting on Follows & Followers page ([taras2358](https://github.com/mastodon/mastodon/pull/13676))
 - Fix wrong pgHero Content-Security-Policy when `CDN_HOST` is set ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/13595))
 - Fix needlessly deduplicating usernames on collisions with remote accounts when signing-up through SAML/CAS ([kaiyou](https://github.com/mastodon/mastodon/pull/13581))
 - Fix page incorrectly scrolling when bringing up dropdown menus in web UI ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/13574))
@@ -961,6 +970,7 @@ All notable changes to this project will be documented in this file.
   - The issue only affects developers of apps who are shared between multiple users, such as server-side apps like cross-posters
 
 ## [3.1.3] - 2020-04-05
+
 ### Added
 
 - Add ability to filter audit log in admin UI ([Gargron](https://github.com/mastodon/mastodon/pull/13381))
@@ -1034,6 +1044,7 @@ All notable changes to this project will be documented in this file.
 - Fix re-sending of e-mail confirmation not being rate limited ([Gargron](https://github.com/mastodon/mastodon/pull/13360))
 
 ## [v3.1.2] - 2020-02-27
+
 ### Added
 
 - Add `--reset-password` option to `tootctl accounts modify` ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/13126))
@@ -1060,11 +1071,13 @@ All notable changes to this project will be documented in this file.
 - Fix leak of arbitrary statuses through unfavourite action in REST API ([Gargron](https://github.com/mastodon/mastodon/pull/13161))
 
 ## [3.1.1] - 2020-02-10
+
 ### Fixed
 
 - Fix yanked dependency preventing installation ([mayaeh](https://github.com/mastodon/mastodon/pull/13059))
 
 ## [3.1.0] - 2020-02-09
+
 ### Added
 
 - Add bookmarks ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/7107), [Gargron](https://github.com/mastodon/mastodon/pull/12494), [Gomasy](https://github.com/mastodon/mastodon/pull/12381))
@@ -1229,6 +1242,7 @@ All notable changes to this project will be documented in this file.
 - Fix settings pages being cacheable by the browser ([Gargron](https://github.com/mastodon/mastodon/pull/12714))
 
 ## [3.0.1] - 2019-10-10
+
 ### Added
 
 - Add `tootctl media usage` command ([Gargron](https://github.com/mastodon/mastodon/pull/12115))
@@ -1262,6 +1276,7 @@ All notable changes to this project will be documented in this file.
 - Fix `tootctl accounts cull` advertising unused option flag ([Kjwon15](https://github.com/mastodon/mastodon/pull/12074))
 
 ## [3.0.0] - 2019-10-03
+
 ### Added
 
 - Add "not available" label to unloaded media attachments in web UI ([Gargron](https://github.com/mastodon/mastodon/pull/11715), [Gargron](https://github.com/mastodon/mastodon/pull/11745))
@@ -1458,6 +1473,7 @@ All notable changes to this project will be documented in this file.
 - Fix performance of GIF re-encoding and always strip EXIF data from videos ([Gargron](https://github.com/mastodon/mastodon/pull/12057))
 
 ## [2.9.3] - 2019-08-10
+
 ### Added
 
 - Add GIF and WebP support for custom emojis ([Gargron](https://github.com/mastodon/mastodon/pull/11519))
@@ -1517,6 +1533,7 @@ All notable changes to this project will be documented in this file.
 - Fix blocked domains still being able to fill database with account records ([Gargron](https://github.com/mastodon/mastodon/pull/11219))
 
 ## [2.9.2] - 2019-06-22
+
 ### Added
 
 - Add `short_description` and `approval_required` to `GET /api/v1/instance` ([Gargron](https://github.com/mastodon/mastodon/pull/11146))
@@ -1531,6 +1548,7 @@ All notable changes to this project will be documented in this file.
 - Fix audio not being downloaded from remote servers ([Gargron](https://github.com/mastodon/mastodon/pull/11145))
 
 ## [2.9.1] - 2019-06-22
+
 ### Added
 
 - Add moderation API ([Gargron](https://github.com/mastodon/mastodon/pull/9387))
@@ -1556,6 +1574,7 @@ All notable changes to this project will be documented in this file.
 - Fix scrolling behaviour in compose form ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/11093))
 
 ## [2.9.0] - 2019-06-13
+
 ### Added
 
 - **Add single-column mode in web UI** ([Gargron](https://github.com/mastodon/mastodon/pull/10807), [Gargron](https://github.com/mastodon/mastodon/pull/10848), [Gargron](https://github.com/mastodon/mastodon/pull/11003), [Gargron](https://github.com/mastodon/mastodon/pull/10961), [Hanage999](https://github.com/mastodon/mastodon/pull/10915), [noellabo](https://github.com/mastodon/mastodon/pull/10917), [abcang](https://github.com/mastodon/mastodon/pull/10859), [Gargron](https://github.com/mastodon/mastodon/pull/10820), [Gargron](https://github.com/mastodon/mastodon/pull/10835), [Gargron](https://github.com/mastodon/mastodon/pull/10809), [Gargron](https://github.com/mastodon/mastodon/pull/10963), [noellabo](https://github.com/mastodon/mastodon/pull/10883), [Hanage999](https://github.com/mastodon/mastodon/pull/10839))
@@ -1610,6 +1629,7 @@ All notable changes to this project will be documented in this file.
 - Fix login sometimes redirecting to paths that are not pages ([Gargron](https://github.com/mastodon/mastodon/pull/11019))
 
 ## [2.8.4] - 2019-05-24
+
 ### Fixed
 
 - Fix delivery not retrying on some inbox errors that should be retriable ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/10812))
@@ -1621,6 +1641,7 @@ All notable changes to this project will be documented in this file.
 - Require specific OAuth scopes for specific endpoints of the streaming API, instead of merely requiring a token for all endpoints, and allow using WebSockets protocol negotiation to specify the access token instead of using a query string ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/10818))
 
 ## [2.8.3] - 2019-05-19
+
 ### Added
 
 - Add `og:image:alt` OpenGraph tag ([BenLubar](https://github.com/mastodon/mastodon/pull/10779))
@@ -1643,6 +1664,7 @@ All notable changes to this project will be documented in this file.
 - Fix "invited by" not showing up in admin UI ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/10791))
 
 ## [2.8.2] - 2019-05-05
+
 ### Added
 
 - Add `SOURCE_TAG` environment variable ([ushitora-anqou](https://github.com/mastodon/mastodon/pull/10698))
@@ -1655,6 +1677,7 @@ All notable changes to this project will be documented in this file.
 - Fix closing video modal scrolling timelines to top ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/10695))
 
 ## [2.8.1] - 2019-05-04
+
 ### Added
 
 - Add link to existing domain block when trying to block an already-blocked domain ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/10663))
@@ -1694,6 +1717,7 @@ All notable changes to this project will be documented in this file.
 - Fix confirmation modals being too narrow for a secondary action button ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/10586))
 
 ## [2.8.0] - 2019-04-10
+
 ### Added
 
 - Add polls ([Gargron](https://github.com/mastodon/mastodon/pull/10111), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/10155), [Gargron](https://github.com/mastodon/mastodon/pull/10184), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/10196), [Gargron](https://github.com/mastodon/mastodon/pull/10248), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/10255), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/10322), [Gargron](https://github.com/mastodon/mastodon/pull/10138), [Gargron](https://github.com/mastodon/mastodon/pull/10139), [Gargron](https://github.com/mastodon/mastodon/pull/10144), [Gargron](https://github.com/mastodon/mastodon/pull/10145),[Gargron](https://github.com/mastodon/mastodon/pull/10146), [Gargron](https://github.com/mastodon/mastodon/pull/10148), [Gargron](https://github.com/mastodon/mastodon/pull/10151), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/10150), [Gargron](https://github.com/mastodon/mastodon/pull/10168), [Gargron](https://github.com/mastodon/mastodon/pull/10165), [Gargron](https://github.com/mastodon/mastodon/pull/10172), [Gargron](https://github.com/mastodon/mastodon/pull/10170), [Gargron](https://github.com/mastodon/mastodon/pull/10171), [Gargron](https://github.com/mastodon/mastodon/pull/10186), [Gargron](https://github.com/mastodon/mastodon/pull/10189), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/10200), [rinsuki](https://github.com/mastodon/mastodon/pull/10203), [Gargron](https://github.com/mastodon/mastodon/pull/10213), [Gargron](https://github.com/mastodon/mastodon/pull/10246), [Gargron](https://github.com/mastodon/mastodon/pull/10265), [Gargron](https://github.com/mastodon/mastodon/pull/10261), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/10333), [Gargron](https://github.com/mastodon/mastodon/pull/10352), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/10140), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/10142), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/10141), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/10162), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/10161), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/10158), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/10156), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/10160), [Gargron](https://github.com/mastodon/mastodon/pull/10185), [Gargron](https://github.com/mastodon/mastodon/pull/10188), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/10195), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/10208), [Gargron](https://github.com/mastodon/mastodon/pull/10187), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/10214), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/10209))
@@ -1777,6 +1801,7 @@ All notable changes to this project will be documented in this file.
 - Fix `tootctl accounts cull` sometimes removing accounts that are temporarily unreachable ([BenLubar](https://github.com/mastodon/mastodon/pull/10460))
 
 ## [2.7.4] - 2019-03-05
+
 ### Fixed
 
 - Fix web UI not cleaning up notifications after block ([Gargron](https://github.com/mastodon/mastodon/pull/10108))
@@ -1791,6 +1816,7 @@ All notable changes to this project will be documented in this file.
 - Fix edit profile page crash for suspended-then-unsuspended users ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/10178))
 
 ## [2.7.3] - 2019-02-23
+
 ### Added
 
 - Add domain filter to the admin federation page ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/10071))
@@ -1808,6 +1834,7 @@ All notable changes to this project will be documented in this file.
 - Change custom emojis to randomize stored file name ([hinaloe](https://github.com/mastodon/mastodon/pull/10090))
 
 ## [2.7.2] - 2019-02-17
+
 ### Added
 
 - Add support for IPv6 in e-mail validation ([zoc](https://github.com/mastodon/mastodon/pull/10009))
@@ -1849,6 +1876,7 @@ All notable changes to this project will be documented in this file.
 - Change error graphic to hover-to-play ([Gargron](https://github.com/mastodon/mastodon/pull/10055))
 
 ## [2.7.1] - 2019-01-28
+
 ### Fixed
 
 - Fix SSO authentication not working due to missing agreement boolean ([Gargron](https://github.com/mastodon/mastodon/pull/9915))
@@ -1863,6 +1891,7 @@ All notable changes to this project will be documented in this file.
 - Fix missing strong style for landing page description ([Kjwon15](https://github.com/mastodon/mastodon/pull/9892))
 
 ## [2.7.0] - 2019-01-20
+
 ### Added
 
 - Add link for adding a user to a list from their profile ([namelessGonbai](https://github.com/mastodon/mastodon/pull/9062))
@@ -1992,6 +2021,7 @@ All notable changes to this project will be documented in this file.
 - Add tombstones for remote statuses to prevent replay attacks ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/9830))
 
 ## [2.6.5] - 2018-12-01
+
 ### Changed
 
 - Change lists to display replies to others on the list and list owner ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/9324))
@@ -2001,11 +2031,13 @@ All notable changes to this project will be documented in this file.
 - Fix failures caused by commonly-used JSON-LD contexts being unavailable ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/9412))
 
 ## [2.6.4] - 2018-11-30
+
 ### Fixed
 
 - Fix yarn dependencies not installing due to yanked event-stream package ([Gargron](https://github.com/mastodon/mastodon/pull/9401))
 
 ## [2.6.3] - 2018-11-30
+
 ### Added
 
 - Add hyphen to characters allowed in remote usernames ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/9345))
@@ -2025,6 +2057,7 @@ All notable changes to this project will be documented in this file.
 - Fix TLS handshake timeout not being enforced ([Gargron](https://github.com/mastodon/mastodon/pull/9381))
 
 ## [2.6.2] - 2018-11-23
+
 ### Added
 
 - Add Page to whitelisted ActivityPub types ([mbajur](https://github.com/mastodon/mastodon/pull/9188))
@@ -2059,12 +2092,14 @@ All notable changes to this project will be documented in this file.
 - Fix HTTP connection timeout of 10s not being enforced ([Gargron](https://github.com/mastodon/mastodon/pull/9329))
 
 ## [2.6.1] - 2018-10-30
+
 ### Fixed
 
 - Fix resolving resources by URL not working due to a regression in [valerauko](https://github.com/mastodon/mastodon/pull/9132) ([Gargron](https://github.com/mastodon/mastodon/pull/9171))
 - Fix reducer error in web UI when a conversation has no last status ([Gargron](https://github.com/mastodon/mastodon/pull/9173))
 
 ## [2.6.0] - 2018-10-30
+
 ### Added
 
 - Add link ownership verification ([Gargron](https://github.com/mastodon/mastodon/pull/8703))
@@ -2169,11 +2204,13 @@ All notable changes to this project will be documented in this file.
 - Fix handling of content types with profile ([valerauko](https://github.com/mastodon/mastodon/pull/9132))
 
 ## [2.5.2] - 2018-10-12
+
 ### Security
 
 - Fix XSS vulnerability ([Gargron](https://github.com/mastodon/mastodon/pull/8959))
 
 ## [2.5.1] - 2018-10-07
+
 ### Fixed
 
 - Fix database migrations for PostgreSQL below 9.5 ([Gargron](https://github.com/mastodon/mastodon/pull/8903))
