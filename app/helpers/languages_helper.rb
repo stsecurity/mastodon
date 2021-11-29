@@ -79,6 +79,7 @@ module LanguagesHelper
     vi: 'Tiếng Việt',
     zgh: 'ⵜⴰⵎⴰⵣⵉⵖⵜ',
     'zh-CN': '简体中文',
+    'zh-YR': '简体中文（百合）',
     'zh-HK': '繁體中文（香港）',
     'zh-TW': '繁體中文（臺灣）',
     zh: '中文',
