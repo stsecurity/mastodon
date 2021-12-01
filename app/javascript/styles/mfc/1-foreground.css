@@ -141,20 +141,18 @@ base background and text
 .load-more,
 .button.button-secondary,
 .simple_form__overlay-area__overlay,
-.rules-list {
+.box-widget,
+.rules-list,
+.rules-list__text {
   background: var(--bg);
-  color: var(--text);
-}
-
-.box-widget {
-  background: var(--bgPageTransparent);
   color: var(--text);
 }
 
 /* border radius for some elements*/
 .search__input,
 .navigation-bar,
-.column-header__wrapper {
+.column-header__wrapper,
+.contact-widget {
   border-radius: 4px 4px 4px 4px;
 }
 
