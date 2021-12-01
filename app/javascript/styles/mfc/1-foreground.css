@@ -126,7 +126,6 @@ base background and text
     .landing-page .features-list .features-list__row .visual .fa,
     .landing-page__short-description h1,
     .landing-page .separator-or span,
-.box-widget,
     .contact-widget,
     .landing-page__information.contact-widget,
 .rich-formatting li,
@@ -141,8 +140,14 @@ base background and text
 .hero-widget__text,
 .load-more,
 .button.button-secondary,
-.simple_form__overlay-area__overlay {
+.simple_form__overlay-area__overlay,
+.rules-list {
   background: var(--bg);
+  color: var(--text);
+}
+
+.box-widget {
+  background: var(--bgPageTransparent);
   color: var(--text);
 }
 
