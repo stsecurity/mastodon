@@ -28,6 +28,7 @@ MISC TWEAKS
   }
 }
 //phones
+@media only screen and (max-width: 960px){
   .ui {
   background: url("https://s3.stsecurity.moe/public-media/fault_bg_mobile.jpg")
     no-repeat center center fixed !important;
@@ -36,6 +37,7 @@ MISC TWEAKS
   -o-background-size: cover;
   background-size: cover;
   }
+}
 
 //header image in start page and about page
 .public-account-header__image img,
