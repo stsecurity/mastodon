@@ -58,7 +58,7 @@ accented buttons
 --------------*/
 
 /* primary buttons */
-.directory__tag > a:hover, .directory__tag > a:active, .directory__tag > a:focus,
+.directory__tag > *:hover, .directory__tag > *:active, .directory__tag > *:focus,
     .button,
         .button:active,
         .button:focus,
