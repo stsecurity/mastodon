@@ -93,7 +93,7 @@ body.theme-default,
 .public-layout .header .nav-link,
 .public-layout .header .nav-button,
 .nothing-here,
-.brand__tagline,
+/*.brand__tagline,*/
 .table-of-contents {
   background: var(--bgPage);
   color: var(--textPage);
