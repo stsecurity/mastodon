@@ -185,6 +185,11 @@ body .neutral-hint, .admin-wrapper .content .neutral-hint,
   border-color: var(--textPageMuted);
 }
 
+/*table of contents color*/
+.table-of-contents li a {
+  color: var(--textPage) !important;
+}
+
 /*nav bar background*/
 .navigation-bar {
   background: var(--bgPage);
