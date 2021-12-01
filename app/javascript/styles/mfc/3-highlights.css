@@ -42,6 +42,7 @@ headers and warnings
         .admin-wrapper .sidebar ul ul a.selected,
     .flash-message,
         .flash-message.notice,
+        .flash-message.translation-prompt,
     .column-inline-form,
         .column-inline-form .icon-button,
         .simple_form .warning,
