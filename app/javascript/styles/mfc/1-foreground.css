@@ -190,6 +190,8 @@ override for bold text
     .directory__tag h4,
 .rich-formatting h3,
     .rich-formatting h4,
+    .rich-formatting h2,
+    .rich-formatting,
 .public-layout .public-account-header__tabs__tabs .counter .counter-number,
 .account__header__fields dt {
   color: var(--textBold);
