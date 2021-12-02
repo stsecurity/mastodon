@@ -1447,6 +1447,8 @@ en:
     default: Mastodon (Dark)
     mastodon-light: Mastodon (Light)
     linernotes_dark: Linernotes Dark
+    fault: fault
+    lilymagic: lilymgic
   time:
     formats:
       default: "%b %d, %Y, %H:%M"

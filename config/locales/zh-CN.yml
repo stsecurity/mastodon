@@ -1390,6 +1390,8 @@ zh-CN:
     default: Mastodon（暗色主题）
     mastodon-light: Mastodon（亮色主题）
     linernotes_dark: Linernotes Dark
+    fault: fault
+    lilymagic: lilymgic
   time:
     formats:
       default: "%Y年%m月%d日 %H:%M"
