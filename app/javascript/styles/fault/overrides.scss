@@ -21,10 +21,10 @@ MISC TWEAKS
   .ui {
   background: url("https://s3.stsecurity.moe/public-media/fault_bg.jpg")
     no-repeat center center fixed !important;
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  -o-background-size: 100%;
-  background-size: 100%;
+  -webkit-background-size: 100vw;
+  -moz-background-size: 100vw;
+  -o-background-size: 100vw;
+  background-size: 100vw;
   }
 }
 //desktop>2560x1440px
@@ -43,10 +43,10 @@ MISC TWEAKS
   .ui {
   background: url("https://s3.stsecurity.moe/public-media/fault_bg_mobile.jpg")
     no-repeat center center fixed !important;
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  -o-background-size: 100%;
-  background-size: 100%;
+  -webkit-background-size: auto 100vh;
+  -moz-background-size: auto 100vh;
+  -o-background-size: auto 100vh;
+  background-size: auto 100vh;
   }
 }
 
