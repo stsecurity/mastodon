@@ -267,6 +267,10 @@ Rails.application.routes.draw do
         post :batch
       end
 
+      collection do
+        post :batch
+      end
+
       resource :change_email, only: [:show, :update]
       resource :reset, only: [:create]
       resource :action, only: [:new, :create], controller: 'account_actions'
