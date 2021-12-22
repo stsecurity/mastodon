@@ -57,4 +57,17 @@
   --textHead: #fff;
   --accent: #09f;
   --accentText: var(--textHead);
+
+  //background image
+  --bgUrl:"https://s3.stsecurity.moe/public-media/lilymagic_bg.png";
+  //desktop>2560x1440px
+  --bg4kUrl:"https://s3.stsecurity.moe/public-media/lilymagic_bg.png";
+  //phones
+  --bgPhoneUrl:"https://s3.stsecurity.moe/public-media/fault_bg_mobile.jpg";
+  //header image in start page and about page
+  --headerUrl:"https://s3.stsecurity.moe/public-media/lilymagic_header.png";
+  /* replace elephant friend with vinyl */
+  --mascotUrl:"https://s3.stsecurity.moe/public-media/lilymagic_mascot.png";
+  //mascot image in about page
+  --aboutMascotUrl:"https://s3.stsecurity.moe/public-media/lilymagic_mascot.png";
 }
