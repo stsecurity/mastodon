@@ -67,4 +67,4 @@ yarn-debug.log
 docker-compose.override.yml
 
 # Ignore Docker compose files
-#docker-compose.yml
+docker-compose.yml
