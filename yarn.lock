@@ -1420,27 +1420,6 @@
     source-map "^0.6.1"
     write-file-atomic "^3.0.0"
 
-"@jest/transform@^27.4.5":
-  version "27.4.5"
-  resolved "https://registry.yarnpkg.com/@jest/transform/-/transform-27.4.5.tgz#3dfe2e3680cd4aa27356172bf25617ab5b94f195"
-  integrity sha512-PuMet2UlZtlGzwc6L+aZmR3I7CEBpqadO03pU40l2RNY2fFJ191b9/ITB44LNOhVtsyykx0OZvj0PCyuLm7Eew==
-  dependencies:
-    "@babel/core" "^7.1.0"
-    "@jest/types" "^27.4.2"
-    babel-plugin-istanbul "^6.0.0"
-    chalk "^4.0.0"
-    convert-source-map "^1.4.0"
-    fast-json-stable-stringify "^2.0.0"
-    graceful-fs "^4.2.4"
-    jest-haste-map "^27.4.5"
-    jest-regex-util "^27.4.0"
-    jest-util "^27.4.2"
-    micromatch "^4.0.4"
-    pirates "^4.0.1"
-    slash "^3.0.0"
-    source-map "^0.6.1"
-    write-file-atomic "^3.0.0"
-
 "@jest/transform@^27.4.6":
   version "27.4.6"
   resolved "https://registry.yarnpkg.com/@jest/transform/-/transform-27.4.6.tgz#153621940b1ed500305eacdb31105d415dc30231"
