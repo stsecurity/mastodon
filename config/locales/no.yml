@@ -1233,13 +1233,11 @@
       subject:
         disable: Kontoen din, %{acct}, har blitt fryst
         none: Advarsel for %{acct}
-        sensitive: Din konto %{acct} medier har blitt merket som følsom
         silence: Kontoen din, %{acct}, har blitt begrenset
         suspend: Kontoen din, %{acct}, har blitt suspendert
       title:
         disable: Kontoen er fryst
         none: Advarsel
-        sensitive: Mediet ditt er markert som følsom
         silence: Kontoen er begrenset
         suspend: Kontoen er suspendert
     welcome:

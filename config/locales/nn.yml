@@ -1252,13 +1252,11 @@ nn:
       subject:
         disable: Kontoen din, %{acct}, har blitt fryst
         none: Åtvaring for %{acct}
-        sensitive: Din konto %{acct} medier har blitt merket som følsom
         silence: Kontoen din, %{acct}, er vorten avgrensa
         suspend: Kontoen din, %{acct}, er vorten utvist
       title:
         disable: Konto frosen
         none: Åtvaring
-        sensitive: Mediet ditt er markert som følsom
         silence: Konto avgrensa
         suspend: Konto utvist
     welcome:

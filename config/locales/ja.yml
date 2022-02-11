@@ -189,6 +189,7 @@ ja:
       security_measures:
         only_password: パスワードのみ
         password_and_2fa: パスワードと 2FA
+        password_and_sign_in_token: パスワードとメールトークン
       sensitive: 閲覧注意
       sensitized: 閲覧注意としてマーク済み
       shared_inbox_url: Shared inbox URL
