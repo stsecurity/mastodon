@@ -528,6 +528,7 @@ ca:
       known_accounts:
         one: "%{count} compte conegut"
         other: "%{count} comptes coneguts"
+        zero: Cap compte conegut
       moderation:
         all: Totes
         limited: Limitades
@@ -956,7 +957,6 @@ ca:
     status:
       account_status: Estat del compte
       confirming: Esperant que es completi la confirmació del correu electrònic.
-      functional: El teu compte està completament operatiu.
       pending: La vostra sol·licitud està pendent de revisió pel nostre personal. Això pot trigar una mica. Rebreu un correu electrònic quan sigui aprovada.
       redirecting_to: El teu compte és inactiu perquè actualment està redirigint a %{acct}.
       view_strikes: Veure accions del passat contra el teu compte

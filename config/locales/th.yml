@@ -487,8 +487,6 @@ th:
       delivery_available: มีการจัดส่ง
       delivery_error_days: วันที่มีข้อผิดพลาดการจัดส่ง
       empty: ไม่พบโดเมน
-      known_accounts:
-        other: "%{count} บัญชีที่รู้จัก"
       moderation:
         all: ทั้งหมด
         limited: จำกัดอยู่
@@ -732,8 +730,6 @@ th:
         allow_provider: อนุญาตผู้เผยแพร่
         disallow: ไม่อนุญาตลิงก์
         disallow_provider: ไม่อนุญาตผู้เผยแพร่
-        shared_by_over_week:
-          other: แบ่งปันโดย %{count} คนในช่วงสัปดาห์ที่ผ่านมา
         title: ลิงก์ที่กำลังนิยม
         usage_comparison: แบ่งปัน %{today} ครั้งวันนี้ เทียบกับ %{yesterday} เมื่อวานนี้
       pending_review: การตรวจทานที่รอดำเนินการ
@@ -768,8 +764,6 @@ th:
         trending_rank: 'กำลังนิยม #%{rank}'
         usable: สามารถใช้
         usage_comparison: ใช้ %{today} ครั้งวันนี้ เทียบกับ %{yesterday} เมื่อวานนี้
-        used_by_over_week:
-          other: ใช้โดย %{count} คนในช่วงสัปดาห์ที่ผ่านมา
       title: แนวโน้ม
     warning_presets:
       add_new: เพิ่มใหม่
@@ -877,7 +871,6 @@ th:
     status:
       account_status: สถานะบัญชี
       confirming: กำลังรอการยืนยันอีเมลให้เสร็จสมบูรณ์
-      functional: บัญชีของคุณทำงานได้อย่างเต็มที่
       pending: ใบสมัครของคุณกำลังรอดำเนินการตรวจทานโดยพนักงานของเรา นี่อาจใช้เวลาสักครู่ คุณจะได้รับอีเมลหากใบสมัครของคุณได้รับการอนุมัติ
       view_strikes: ดูการดำเนินการที่ผ่านมากับบัญชีของคุณ
     too_fast: ส่งแบบฟอร์มเร็วเกินไป ลองอีกครั้ง

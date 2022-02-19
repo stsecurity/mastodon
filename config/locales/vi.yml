@@ -512,7 +512,9 @@ vi:
       destroyed_msg: Dữ liệu từ %{domain} đã lên lịch để xóa.
       empty: Không có máy chủ nào.
       known_accounts:
-        other: "%{count} tài khoản đã biết"
+        one: "%{count} người dùng đã biết"
+        other: "%{count} người dùng đã biết"
+        zero: Không có người dùng đã biết
       moderation:
         all: Tất cả
         limited: Hạn chế
@@ -665,7 +667,7 @@ vi:
         desc_html: Hiển thị trên trang chủ. Kích cỡ tối thiểu 600x100px. Mặc định dùng hình thu nhỏ của máy chủ
         title: Hình ảnh giới thiệu
       mascot:
-        desc_html: Hiển thị trên nhiều trang. Kích cỡ tối thiểu 293 x 205px. Mặc định dùng linh vật Mastodon
+        desc_html: Hiển thị trên nhiều trang. Kích cỡ tối thiểu 293 × 205px. Mặc định dùng linh vật Mastodon
         title: Logo máy chủ
       peers_api_enabled:
         desc_html: Tên miền mà máy chủ này đã kết giao trong mạng liên hợp
@@ -937,7 +939,6 @@ vi:
     status:
       account_status: Trạng thái tài khoản
       confirming: Đang chờ xác thực email.
-      functional: Tài khoản của bạn đã được xác thực.
       pending: Đơn đăng ký của bạn đang chờ phê duyệt. Điều này có thể mất một thời gian. Bạn sẽ nhận được email nếu đơn đăng ký của bạn được chấp thuận.
       redirecting_to: Tài khoản của bạn không hoạt động vì hiện đang chuyển hướng đến %{acct}.
       view_strikes: Xem những lần cảnh cáo cũ

@@ -413,9 +413,6 @@ sv:
         unavailable: Ej tillgänglig
       delivery_available: Leverans är tillgängligt
       empty: Inga domäner hittades.
-      known_accounts:
-        one: "%{count} känt konto"
-        other: "%{count} kända konton"
       moderation:
         all: Alla
         limited: Begränsad

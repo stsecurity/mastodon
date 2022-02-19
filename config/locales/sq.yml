@@ -527,6 +527,7 @@ sq:
       known_accounts:
         one: "%{count} llogari e njohur"
         other: "%{count} llogari të njohura"
+        zero: Pa llogari të njohur
       moderation:
         all: Krejt
         limited: Të kufizuarat
@@ -949,7 +950,6 @@ sq:
     status:
       account_status: Gjendje llogarie
       confirming: Po pritet që të plotësohet ripohimi i email-it.
-      functional: Llogaria juaj është tërësisht funksionale.
       pending: Aplikimi juaj është në pritje të shqyrtimit nga stafi ynë. Kjo mund të dojë ca kohë. Nëse aplikimi juaj miratohet, do të merrni një email.
       redirecting_to: Llogaria juaj është joaktive, ngaqë aktualisht ridrejton te %{acct}.
       view_strikes: Shihni paralajmërime të dikurshme kundër llogarisë tuaj

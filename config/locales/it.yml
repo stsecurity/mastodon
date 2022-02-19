@@ -528,6 +528,7 @@ it:
       known_accounts:
         one: "%{count} account noto"
         other: "%{count} account noti"
+        zero: Nessun account noto
       moderation:
         all: Tutto
         limited: Limitato
@@ -799,6 +800,7 @@ it:
         shared_by_over_week:
           one: Condiviso da una persona nell'ultima settimana
           other: Condiviso da %{count} persone nell'ultima settimana
+          zero: Condiviso da nessuno nell'ultima settimana
         title: Link in tendenza
         usage_comparison: Condiviso %{today} volte oggi, rispetto a %{yesterday} ieri
       pending_review: Revisione in sospeso
@@ -841,6 +843,7 @@ it:
         used_by_over_week:
           one: Usato da una persona nell'ultima settimana
           other: Usato da %{count} persone nell'ultima settimana
+          zero: Usato da nessuno nell'ultima settimana
       title: Tendenze
     warning_presets:
       add_new: Aggiungi nuovo
