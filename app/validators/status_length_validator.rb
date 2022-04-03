@@ -21,23 +21,23 @@ class StatusLengthValidator < ActiveModel::Validator
   end
 
   def too_long_uncut?(status)
-    (countable_uncut_length > MAX_UNCUT_CHARS) && (countable_spoiler_length < 1)
+    (countable_uncut_length(status) > MAX_UNCUT_CHARS) && (countable_spoiler_length(status) < 1)
   end
 
   def countable_length(str)
     str.mb_chars.grapheme_length
   end
 
-  def countable_uncut_length
-    countable_text.mb_chars.grapheme_length
+  def countable_uncut_length(status)
+    countable_text(status.text).mb_chars.grapheme_length
   end
 
-  def countable_spoiler_length
-    @status.spoiler_text.mb_chars.grapheme_length
+  def countable_spoiler_length(status)
+    status.spoiler_text.mb_chars.grapheme_length
   end
 
-  def total_text
-    [@status.spoiler_text, countable_text].join
+  def total_text(status)
+    [status.spoiler_text, countable_text(status.text)].join
 
   def combined_text(status)
     [status.spoiler_text, countable_text(status.text)].join
