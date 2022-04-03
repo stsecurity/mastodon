@@ -36,9 +36,6 @@ class StatusLengthValidator < ActiveModel::Validator
     status.spoiler_text.mb_chars.grapheme_length
   end
 
-  def total_text(status)
-    [status.spoiler_text, countable_text(status.text)].join
-
   def combined_text(status)
     [status.spoiler_text, countable_text(status.text)].join
   end
