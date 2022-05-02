@@ -1,3 +1,11 @@
 .admin-wrapper .sidebar ul a {
     border-radius: 0px !important;
 }
+
+.notification-favourite .status {
+    max-height: none !important;
+}
+
+.batch-table__row:hover {
+    background: var(--bg);
+}
