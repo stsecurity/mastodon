@@ -8,6 +8,7 @@ base background and text
 
 /* background and drawer */
 body.app-body,
+.announcements,
 /*.ui,*/
 .drawer__tab,
 .drawer__inner,
