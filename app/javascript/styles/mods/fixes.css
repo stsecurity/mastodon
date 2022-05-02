@@ -23,6 +23,6 @@
     border: none;
 }
 
-.directory__tag>a>* {
+.directory__tag>a * {
     background: none;
 }
