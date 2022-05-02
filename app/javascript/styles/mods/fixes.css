@@ -23,6 +23,6 @@
     border: none;
 }
 
-.directory__tag>a>*:active, .directory__tag>a>*:focus, .directory__tag>a>*:hover {
+.directory__tag>a>* {
     background: none;
 }
