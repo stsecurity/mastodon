@@ -9,3 +9,8 @@
 .batch-table__row:hover {
     background: var(--bg);
 }
+
+.input-copy {
+    background: none;
+    border: none;
+}
