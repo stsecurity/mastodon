@@ -226,3 +226,7 @@ label.required,
 .table-wrapper .table {
   border-radius: 4px;
 }
+
+.activity-stream {
+  background: var(--bg);
+}
