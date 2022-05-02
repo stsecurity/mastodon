@@ -22,3 +22,7 @@
     background: none;
     border: none;
 }
+
+.directory__tag>a>*:active, .directory__tag>a>*:focus, .directory__tag>a>*:hover {
+    background: none;
+}
