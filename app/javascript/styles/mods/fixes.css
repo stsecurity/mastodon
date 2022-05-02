@@ -2,6 +2,10 @@
     border-radius: 0px !important;
 }
 
+.admin-wrapper .content .directory__tag h4 {
+    background: none;
+}
+
 .notification-favourite .status {
     max-height: none !important;
 }
