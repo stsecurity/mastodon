@@ -8,6 +8,7 @@ base background and text
 
 /* background and drawer */
 body.app-body,
+.announcements,
 /*.ui,*/
 .drawer__tab,
 .drawer__inner,
@@ -60,6 +61,7 @@ body.app-body,
 .admin-wrapper .sidebar-wrapper,
     .admin-wrapper .sidebar-wrapper__inner,
     .admin-wrapper .sidebar ul a,
+    .admin-wrapper .content .directory__tag h4,
 /*    .admin-wrapper .sidebar ul a.selected,*/
     .admin-wrapper .sidebar ul ul a,
     .admin-wrapper .content h2,
@@ -219,4 +221,12 @@ label.required,
 .optional ul li label,
 .user_setting_display_media ul label {
   color: var(--textPage) !important;
+}
+
+.table-wrapper .table {
+  border-radius: 4px;
+}
+
+.activity-stream {
+  background: var(--bg);
 }
