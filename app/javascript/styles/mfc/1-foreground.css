@@ -311,3 +311,7 @@ a.table-action-link,
 .dashboard__widgets a:not(.name-tag) {
   color: var(--text) !important;
 }
+
+.account-card .account-card__bio {
+  color: var(--textHead) !important;
+}

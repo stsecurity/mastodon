@@ -72,4 +72,8 @@ class FeedInsertWorker
   def update?
     @options[:update]
   end
+
+  def update?
+    @options[:update]
+  end
 end

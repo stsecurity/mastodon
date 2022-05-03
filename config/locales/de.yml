@@ -957,7 +957,6 @@ de:
     status:
       account_status: Kontostatus
       confirming: Warte auf die Bestätigung der E-Mail.
-      functional: Dein Konto ist voll funktionsfähig.
       pending: Deine Bewerbung wird von unseren Mitarbeitern noch überprüft. Dies kann einige Zeit dauern. Du erhältst eine E-Mail, wenn deine Bewerbung genehmigt wurde.
       redirecting_to: Dein Konto ist inaktiv, da es derzeit zu %{acct} umgeleitet wird.
       view_strikes: Zeige frühere Streiks gegen dein Konto

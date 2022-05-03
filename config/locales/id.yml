@@ -513,7 +513,9 @@ id:
       destroyed_msg: Data dari %{domain} masuk antrean dihapus dalam waktu dekat.
       empty: Domain tidak ditemukan.
       known_accounts:
-        other: "%{count} akun yang dikenal"
+        one: "%{count} akun dikenal"
+        other: "%{count} akun dikenal"
+        zero: Tidak ada akun yang dikenal
       moderation:
         all: Semua
         limited: Terbatas
@@ -782,7 +784,9 @@ id:
         disallow: Batalkan izin tautan
         disallow_provider: Batalkan izin penerbit
         shared_by_over_week:
-          other: Dibagikan oleh %{count} orang selama seminggu terakhir
+          one: Dibagikan oleh satu orang lebih dari seminggu lalu
+          other: Dibagikan oleh %{count} orang lebih dari seminggu lalu
+          zero: Tidak dibagikan siapapun lebih dari seminggu lalu
         title: Tautan sedang tren
         usage_comparison: Dibagikan %{today} kali hari ini, dibandingkan %{yesterday} kemarin
       pending_review: Tinjauan tertunda
@@ -821,8 +825,6 @@ id:
         trending_rank: 'Sedang tren #%{rank}'
         usable: Dapat digunakan
         usage_comparison: Digunakan %{today} kali hari ini, dibandingkan %{yesterday} kemarin
-        used_by_over_week:
-          other: Digunakan oleh %{count} orang selama seminggu terakhir
       title: Tren
     warning_presets:
       add_new: Tambah baru
@@ -938,7 +940,6 @@ id:
     status:
       account_status: Status akun
       confirming: Menunggu konfirmasi email diselesaikan.
-      functional: Akun Anda kini beroperasi penuh.
       pending: Permintaan Anda sedang ditinjau oleh staf kami. Ini mungkin butuh beberapa waktu. Anda akan menerima email jika permintaan Anda diterima.
       redirecting_to: Akun Anda tidak aktif karena sekarang dialihkan ke %{acct}.
       view_strikes: Lihat hukuman lalu yang pernah terjadi kepada akun Anda

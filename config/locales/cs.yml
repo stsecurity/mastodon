@@ -550,11 +550,6 @@ cs:
       delivery_error_hint: Není-li možné doručení po dobu %{count} dnů, bude automaticky označen za nedoručitelný.
       destroyed_msg: Data z %{domain} nyní čekají na smazání.
       empty: Nebyly nalezeny žádné domény.
-      known_accounts:
-        few: "%{count} známé účty"
-        many: "%{count} známých účtů"
-        one: "%{count} známý účet"
-        other: "%{count} známých účtů"
       moderation:
         all: Všechny
         limited: Omezený
@@ -825,11 +820,6 @@ cs:
         description_html: Toto jsou odkazy, které jsou momentálně hojně sdíleny účty, jejichž příspěvky váš server vidí. To může pomoct vašim uživatelům zjistit, co se děje ve světě. Žádné odkazy se nezobrazují veřejně, dokud neschválíte vydavatele. Můžete také povolit nebo zamítnout jednotlivé odkazy.
         disallow: Zakázat odkaz
         disallow_provider: Zakázat vydavatele
-        shared_by_over_week:
-          few: Sdílený %{count} lidmi za poslední týden
-          many: Sdílený %{count} lidmi za poslední týden
-          one: Sdílený jedním člověkem za poslední týden
-          other: Sdílený %{count} lidmi za poslední týden
         title: Populární odkazy
         usage_comparison: Za dnešek %{today} sdílení, oproti %{yesterday} včera
       pending_review: Čeká na posouzení
@@ -871,11 +861,6 @@ cs:
         trending_rank: 'Populární #%{rank}'
         usable: Může být používán
         usage_comparison: Za dnešek %{today} použití, oproti %{yesterday} včera
-        used_by_over_week:
-          few: Použit %{count} lidmi za poslední týden
-          many: Použit %{count} lidmi za poslední týden
-          one: Použit jedním člověkem za poslední týden
-          other: Použit %{count} lidmi za poslední týden
       title: Trendy
     warning_presets:
       add_new: Přidat nové

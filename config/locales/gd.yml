@@ -825,11 +825,6 @@ gd:
         description_html: Seo na ceanglaichean a tha ’gan co-roinneadh le iomadh cunntas on a chì am frithealaiche agad na postaichean. Faodaidh iad a bhith ’nan cuideachadh dhan luchd-cleachdaidh ach am faigh iad a-mach dè tha tachairt air an t-saoghal. Cha dèid ceanglaichean a shealltainn gu poblach gus an aontaich thu ris an fhoillsichear. ’S urrainn dhut ceanglaichean àraidh a cheadachadh no a dhiùltadh cuideachd.
         disallow: Na ceadaich an ceangal
         disallow_provider: Na ceadaich am foillsichear
-        shared_by_over_week:
-          few: Chaidh a cho-roinneadh le %{count} rè na seachdain seo chaidh
-          one: Chaidh a cho-roinneadh le %{count} rè na seachdain seo chaidh
-          other: Chaidh a cho-roinneadh le %{count} rè na seachdain seo chaidh
-          two: Chaidh a cho-roinneadh le %{count} rè na seachdain seo chaidh
         title: Ceanglaichean a’ treandadh
         usage_comparison: Chaidh a cho-roinneadh %{today} tura(i)s an-diugh an coimeas ri %{yesterday} an-dè
       pending_review: A’ feitheamh air lèirmheas
@@ -871,11 +866,6 @@ gd:
         trending_rank: 'A’ treandadh #%{rank}'
         usable: Gabhaidh a chleachdadh
         usage_comparison: Chaidh a chleachdadh %{today} tura(i)s an-diugh an coimeas ri %{yesterday} an-dè
-        used_by_over_week:
-          few: Chaidh a chleachdadh le %{count} rè na seachdain seo chaidh
-          one: Chaidh a chleachdadh le %{count} rè na seachdain seo chaidh
-          other: Chaidh a chleachdadh le %{count} rè na seachdain seo chaidh
-          two: Chaidh a chleachdadh le %{count} rè na seachdain seo chaidh
       title: Treandaichean
     warning_presets:
       add_new: Cuir fear ùr ris
@@ -991,7 +981,6 @@ gd:
     status:
       account_status: Staid a’ chunntais
       confirming: A’ feitheamh air coileanadh an dearbhaidh on phost-d.
-      functional: Tha an cunntas agad ag obair gu slàn.
       pending: Feumaidh an sgioba againn lèirmheas a dhèanamh air d’ iarrtas. Dh’fhaoidte gun doir seo greis. Gheibh thu post-d nuair a bhios sinn air aontachadh ri d’ iarrtas.
       redirecting_to: Chan eil an cunntas gad gnìomhach on a tha e ’ga ath-stiùireadh gu %{acct}.
       view_strikes: Seall na rabhaidhean a fhuair an cunntas agad roimhe

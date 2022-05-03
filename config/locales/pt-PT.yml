@@ -529,6 +529,7 @@ pt-PT:
       known_accounts:
         one: "%{count} conta conhecida"
         other: "%{count} contas conhecidas"
+        zero: Nenhuma conta conhecida
       moderation:
         all: Todas
         limited: Limitadas
@@ -800,6 +801,7 @@ pt-PT:
         shared_by_over_week:
           one: Partilhado por uma pessoa na última semana
           other: Partilhado por %{count} pessoas na última semana
+          zero: Partilhado por ninguém na última semana
         title: Links em destaque
         usage_comparison: Partilhado %{today} vezes hoje, em comparação com %{yesterday} ontem
       pending_review: Pendente de revisão
@@ -842,6 +844,7 @@ pt-PT:
         used_by_over_week:
           one: Utilizada por uma pessoa na última semana
           other: Utilizada por %{count} pessoas na última semana
+          zero: Utilizada por ninguém na última semana
       title: Tendências
     warning_presets:
       add_new: Adicionar novo
@@ -957,7 +960,6 @@ pt-PT:
     status:
       account_status: Estado da conta
       confirming: A aguardar que conclua a confirmação do e-mail.
-      functional: A sua conta está totalmente operacional.
       pending: A sua inscrição está pendente de revisão pela nossa equipa. Isso pode demorar algum tempo. Receberá um e-mail se a sua conta for aprovada.
       redirecting_to: A sua conta está inativa porque está atualmente a ser redirecionada para %{acct}.
       view_strikes: Veja as punições anteriores contra a sua conta
