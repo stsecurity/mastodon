@@ -806,6 +806,7 @@ hu:
           zero: Senki sem osztotta meg az elmúlt héten
         title: Felkapott hivatkozások
         usage_comparison: "%{today} alkalommal lett ma megosztva, a tegnapi %{yesterday} alkalomhoz képest"
+      only_allowed: Csak engedélyezett
       pending_review: Áttekintésre vár
       preview_card_providers:
         allowed: A közzétevő hivatkozásai felkapottak lehetnek
@@ -848,6 +849,7 @@ hu:
           other: "%{count} ember használta a múlt héten"
           zero: Senki sem használta a múlt héten
       title: Trendek
+      trending: Felkapott
     warning_presets:
       add_new: Új hozzáadása
       delete: Törlés

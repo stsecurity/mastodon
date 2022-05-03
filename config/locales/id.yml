@@ -789,6 +789,7 @@ id:
           zero: Tidak dibagikan siapapun lebih dari seminggu lalu
         title: Tautan sedang tren
         usage_comparison: Dibagikan %{today} kali hari ini, dibandingkan %{yesterday} kemarin
+      only_allowed: Yang diizinkan saja
       pending_review: Tinjauan tertunda
       preview_card_providers:
         allowed: Tautan dari penerbit ini dapat menjadi tren
@@ -826,6 +827,7 @@ id:
         usable: Dapat digunakan
         usage_comparison: Digunakan %{today} kali hari ini, dibandingkan %{yesterday} kemarin
       title: Tren
+      trending: Sedang tren
     warning_presets:
       add_new: Tambah baru
       delete: Hapus
