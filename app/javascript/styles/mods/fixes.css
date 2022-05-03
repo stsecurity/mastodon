@@ -26,3 +26,7 @@
 .directory__tag>a * {
     background: none !important;
 }
+
+.getting-started__trends h4 {
+    color: var(--textPage) !important;
+}
