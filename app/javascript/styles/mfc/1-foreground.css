@@ -9,7 +9,6 @@ base background and text
 /* status columns */
 .column>.scrollable,
 .status,
-    .status__content,
 .detailed-status,
     .detailed-status__action-bar,
     .focusable:focus .detailed-status,
@@ -31,7 +30,6 @@ base background and text
 .trends__header,
 /* new conversations */
 .conversation--unread,
-.conversation__content__names,
 /* search */
 .search__input,
     .search__input:focus,
@@ -314,4 +312,10 @@ a.table-action-link,
 
 .account-card .account-card__bio {
   color: var(--textHead) !important;
+}
+
+/*fixing direct messages*/
+.status__content,
+.conversation__content__names {
+    color: var(--text);
 }
