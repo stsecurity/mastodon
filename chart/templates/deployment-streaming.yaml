@@ -11,6 +11,7 @@ spec:
   selector:
     matchLabels:
       {{- include "mastodon.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: streaming
   template:
     metadata:
     {{- with .Values.podAnnotations }}
@@ -19,6 +20,7 @@ spec:
     {{- end }}
       labels:
         {{- include "mastodon.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: streaming
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -43,16 +45,12 @@ spec:
             - name: "DB_PASS"
               valueFrom:
                 secretKeyRef:
-                  {{- if .Values.postgresql.enabled }}
-                  name: {{ .Release.Name }}-postgresql
-                  {{- else }}
-                  name: {{ template "mastodon.fullname" . }}
-                  {{- end }}
-                  key: postgresql-password
+                  name: {{ template "mastodon.postgresql.secretName" . }}
+                  key: password
             - name: "REDIS_PASSWORD"
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Release.Name }}-redis
+                  name: {{ template "mastodon.redis.secretName" . }}
                   key: redis-password
             - name: "PORT"
               value: {{ .Values.mastodon.streaming.port | quote }}
