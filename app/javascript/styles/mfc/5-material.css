@@ -5,6 +5,7 @@ material design overrides
 /* turn statuses into cards */
 .drawer__inner darker {filter: drop-shadow(0 0 2px black)}
 .status,
+.notification,
 .conversation,
 .account-authorize__wrapper,
 .follow_requests-unlocked_explanation
@@ -27,7 +28,6 @@ material design overrides
 .account,
 .conversation
     {background: var(--bg)}
-.notification .account,
 .load-more
     {background: var(--bgPage)}
 .status__prepend,
