@@ -8,7 +8,6 @@ base background and text
 
 /* background and drawer */
 body.app-body,
-.announcements,
 /*.ui,*/
 .drawer__tab,
 .drawer__inner,
@@ -61,12 +60,12 @@ body.app-body,
 .admin-wrapper .sidebar-wrapper,
     .admin-wrapper .sidebar-wrapper__inner,
     .admin-wrapper .sidebar ul a,
-    .admin-wrapper .content .directory__tag h4,
 /*    .admin-wrapper .sidebar ul a.selected,*/
     .admin-wrapper .sidebar ul ul a,
     .admin-wrapper .content h2,
     .admin-wrapper .content h6,
-    .admin-wrapper .content h3,
+.simple_form input[type="datetime-local"]::placeholder, .simple_form input[type="email"]::placeholder, .simple_form input[type="number"]::placeholder, .simple_form input[type="password"]::placeholder, .simple_form input[type="text"]::placeholder, .simple_form input[type="url"]::placeholder, .simple_form textarea::placeholder,
+tr.nested-fields > td > .custom_filter_keywords_keyword > input,
 /* modals */
 .boost-modal__action-bar,
     .confirmation-modal__action-bar,
@@ -79,9 +78,16 @@ body.app-body,
     .regeneration-indicator,
     .empty-column-indicator,
 .report-modal__comment .setting-text,
+.report-dialog-modal .dialog-option .poll__input,
+.report-dialog-modal__textarea,
+.report-dialog-modal .button.button-secondary,
 .introduction__text p code,
 .list-editor .search__input,
 .announcements__item,
+.dismissable-banner,
+    .dismissable-banner__message,
+.account-card__header img,
+.emoji-mart-search input,
 /* opengraph previews */
 .status-card__image,
 .status-card__content,
@@ -96,15 +102,16 @@ body.theme-default,
 .public-layout .header .nav-link,
 .public-layout .header .nav-button,
 .nothing-here,
-/*.brand__tagline,*/
-.table-of-contents {
+.brand__tagline,
+.table-of-contents,
+/* about page */
+.about__domain-blocks__domain,
+    .about__domain-blocks__domain:nth-child(2n),
+.about__footer,
+/* account fields*/
+.account__header__bio .account__header__fields,
+.account__header__bio .account__header__fields dd {
   background: var(--bgPage);
-  color: var(--textPage);
-}
-
-/*notification section*/
-.setting-toggle__label,
-.column-settings__section {
   color: var(--textPage);
 }
 
@@ -124,6 +131,7 @@ override for bold text
     .account__section-headline button.active,
     .notification__filter-bar a.active,
     .notification__filter-bar button.active,
+.about__domain-blocks__domain h6,
 /* public pages */
 .information-board__section,
     .information-board__section span:last-child,
@@ -133,7 +141,9 @@ override for bold text
     .pagination .gap,
     .pagination .newer,
     .pagination .older,
-    .pagination a {
+    .pagination a,
+/*account fields*/
+.account__header__bio .account__header__fields dt {
   color: var(--textPageBold);
 }
 
@@ -167,6 +177,8 @@ override for muted text
 .list-editor .search__input::placeholder,
     .list-editor .search__icon .fa,
     .list-editor .search__icon .fa-times-circle,
+.report-dialog-modal__textarea::placeholder,
+.link-footer p,
 /* settings page */
 body .neutral-hint, .admin-wrapper .content .neutral-hint,
 /* public pages */
@@ -184,49 +196,27 @@ body .neutral-hint, .admin-wrapper .content .neutral-hint,
 
 /* border color fix */
 .status.status-direct:not(.read),
-.table-of-contents li a {
+.table-of-contents li a,
+.report-dialog-modal .button.button-secondary {
   border-color: var(--textPageMuted);
 }
 
-/*table of contents color*/
-.table-of-contents li a {
-  color: var(--textPage) !important;
+.dismissable-banner,
+.about__domain-blocks,
+.emoji-mart-search input,
+.compose-panel hr,
+.navigation-panel hr {
+  border-color: transparent;
 }
 
-/*nav bar background*/
-.navigation-bar {
-  background: var(--bgPage);
+.about__domain-blocks__domain,
+.account__header__bio .account__header__fields dl {
+  border-color: var(--bg);
 }
 
-/*transparent background for columns*/
-.columns-area__panels__pane__inner,
-.columns-area__panels__main,
-.column,
-.drawer {
-  background: var(--bgPageTransparent);
-}
-.tabs-bar__wrapper {
-  background: rgba(0, 0, 0, 0);
-}
-
-/*filter button color when focused*/
-.column-header__button.active {
-  background: var(--bgPage);
-}
-
-/*font color at setting page*/
-label.optional,
-label.required,
-.label_input ul li label,
-.optional ul li label,
-.user_setting_display_media ul label {
-  color: var(--textPage) !important;
-}
-
-.table-wrapper .table {
-  border-radius: 4px;
-}
-
-.activity-stream {
-  background: var(--bg);
+/* account fields */
+.account__header__bio .account__header__fields .verified a,
+.account__header__bio .account__header__fields .verified dd,
+.account__header__bio .account__header__fields .verified dt {
+  background: transparent;
 }
