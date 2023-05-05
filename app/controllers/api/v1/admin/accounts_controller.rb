@@ -56,12 +56,14 @@ class Api::V1::Admin::AccountsController < Api::BaseController
   def approve
     authorize @account.user, :approve?
     @account.user.approve!
+    log_action :approve, @account.user
     render json: @account, serializer: REST::Admin::AccountSerializer
   end
 
   def reject
     authorize @account.user, :reject?
     DeleteAccountService.new.call(@account, reserve_email: false, reserve_username: false)
+    log_action :reject, @account.user
     render_empty
   end
 
@@ -120,9 +122,7 @@ class Api::V1::Admin::AccountsController < Api::BaseController
       translated_params[:status] = status.to_s if params[status].present?
     end
 
-    if params[:staff].present?
-      translated_params[:role_ids] = UserRole.that_can(:manage_reports).map(&:id)
-    end
+    translated_params[:role_ids] = UserRole.that_can(:manage_reports).map(&:id) if params[:staff].present?
 
     translated_params
   end

@@ -3,7 +3,7 @@
 class Account::Field < ActiveModelSerializers::Model
   MAX_CHARACTERS_LOCAL  = 255
   MAX_CHARACTERS_COMPAT = 2_047
-  ACCEPTED_SCHEMES      = %w(http https).freeze
+  ACCEPTED_SCHEMES      = %w(https).freeze
 
   attributes :name, :value, :verified_at, :account
 
@@ -14,8 +14,8 @@ class Account::Field < ActiveModelSerializers::Model
     @account        = account
 
     super(
-      name:        sanitize(attributes['name']),
-      value:       sanitize(attributes['value']),
+      name: sanitize(attributes['name']),
+      value: sanitize(attributes['value']),
       verified_at: attributes['verified_at']&.to_datetime,
     )
   end
@@ -25,13 +25,11 @@ class Account::Field < ActiveModelSerializers::Model
   end
 
   def value_for_verification
-    @value_for_verification ||= begin
-      if account.local?
-        value
-      else
-        extract_url_from_html
-      end
-    end
+    @value_for_verification ||= if account.local?
+                                  value
+                                else
+                                  extract_url_from_html
+                                end
   end
 
   def verifiable?
@@ -46,7 +44,8 @@ class Account::Field < ActiveModelSerializers::Model
       parsed_url.user.nil? &&
       parsed_url.password.nil? &&
       parsed_url.host.present? &&
-      parsed_url.normalized_host == parsed_url.host
+      parsed_url.normalized_host == parsed_url.host &&
+      (parsed_url.path.empty? || parsed_url.path == parsed_url.normalized_path)
   rescue Addressable::URI::InvalidURIError, IDN::Idna::IdnaError
     false
   end
@@ -76,6 +75,7 @@ class Account::Field < ActiveModelSerializers::Model
   def extract_url_from_html
     doc = Nokogiri::HTML(value).at_xpath('//body')
 
+    return if doc.nil?
     return if doc.children.size > 1
 
     element = doc.children.first
