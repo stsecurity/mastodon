@@ -8,12 +8,12 @@ cs:
       user:
         agreement: Souhlas s podmínkami
         email: E-mailová adresa
-        locale: Jazyk
+        locale: Lokalizace
         password: Heslo
       user/account:
-        username: Uživatelské jméno
+        username: Uživatel
       user/invite_request:
-        text: Důvod
+        text: Zdůvodnění
     errors:
       models:
         account:

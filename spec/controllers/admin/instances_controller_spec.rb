@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-RSpec.describe Admin::InstancesController do
+RSpec.describe Admin::InstancesController, type: :controller do
   render_views
 
   let(:current_user) { Fabricate(:user, role: UserRole.find_by(name: 'Admin')) }
@@ -44,7 +42,7 @@ RSpec.describe Admin::InstancesController do
       let(:role) { UserRole.find_by(name: 'Admin') }
 
       it 'succeeds in purging instance' do
-        expect(subject).to redirect_to admin_instances_path
+        is_expected.to redirect_to admin_instances_path
       end
     end
 
@@ -52,7 +50,7 @@ RSpec.describe Admin::InstancesController do
       let(:role) { nil }
 
       it 'fails to purge instance' do
-        expect(subject).to have_http_status 403
+        is_expected.to have_http_status :forbidden
       end
     end
   end

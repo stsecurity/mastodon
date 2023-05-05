@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-RSpec.describe Api::V1::MutesController do
+RSpec.describe Api::V1::MutesController, type: :controller do
   render_views
 
   let(:user)   { Fabricate(:user) }
@@ -13,13 +11,13 @@ RSpec.describe Api::V1::MutesController do
 
   describe 'GET #index' do
     it 'limits according to limit parameter' do
-      Array.new(2) { Fabricate(:mute, account: user.account) }
+      2.times.map { Fabricate(:mute, account: user.account) }
       get :index, params: { limit: 1 }
       expect(body_as_json.size).to eq 1
     end
 
     it 'queries mutes in range according to max_id' do
-      mutes = Array.new(2) { Fabricate(:mute, account: user.account) }
+      mutes = 2.times.map { Fabricate(:mute, account: user.account) }
 
       get :index, params: { max_id: mutes[1] }
 
@@ -28,7 +26,7 @@ RSpec.describe Api::V1::MutesController do
     end
 
     it 'queries mutes in range according to since_id' do
-      mutes = Array.new(2) { Fabricate(:mute, account: user.account) }
+      mutes = 2.times.map { Fabricate(:mute, account: user.account) }
 
       get :index, params: { since_id: mutes[0] }
 
@@ -37,15 +35,15 @@ RSpec.describe Api::V1::MutesController do
     end
 
     it 'sets pagination header for next path' do
-      mutes = Array.new(2) { Fabricate(:mute, account: user.account) }
+      mutes = 2.times.map { Fabricate(:mute, account: user.account) }
       get :index, params: { limit: 1, since_id: mutes[0] }
-      expect(response.headers['Link'].find_link(%w(rel next)).href).to eq api_v1_mutes_url(limit: 1, max_id: mutes[1])
+      expect(response.headers['Link'].find_link(['rel', 'next']).href).to eq api_v1_mutes_url(limit: 1, max_id: mutes[1])
     end
 
     it 'sets pagination header for previous path' do
       mute = Fabricate(:mute, account: user.account)
       get :index
-      expect(response.headers['Link'].find_link(%w(rel prev)).href).to eq api_v1_mutes_url(since_id: mute)
+      expect(response.headers['Link'].find_link(['rel', 'prev']).href).to eq api_v1_mutes_url(since_id: mute)
     end
 
     it 'returns http success' do

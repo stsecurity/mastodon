@@ -1,63 +1,61 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-RSpec.describe MediaAttachment do
+RSpec.describe MediaAttachment, type: :model do
   describe 'local?' do
-    subject { media_attachment.local? }
-
     let(:media_attachment) { Fabricate(:media_attachment, remote_url: remote_url) }
 
-    context 'when remote_url is blank' do
+    subject { media_attachment.local? }
+
+    context 'remote_url is blank' do
       let(:remote_url) { '' }
 
       it 'returns true' do
-        expect(subject).to be true
+        is_expected.to be true
       end
     end
 
-    context 'when remote_url is present' do
+    context 'remote_url is present' do
       let(:remote_url) { 'remote_url' }
 
       it 'returns false' do
-        expect(subject).to be false
+        is_expected.to be false
       end
     end
   end
 
   describe 'needs_redownload?' do
-    subject { media_attachment.needs_redownload? }
-
     let(:media_attachment) { Fabricate(:media_attachment, remote_url: remote_url, file: file) }
 
-    context 'when file is blank' do
+    subject { media_attachment.needs_redownload? }
+
+    context 'file is blank' do
       let(:file) { nil }
 
-      context 'when remote_url is present' do
+      context 'remote_url is present' do
         let(:remote_url) { 'remote_url' }
 
         it 'returns true' do
-          expect(subject).to be true
+          is_expected.to be true
         end
       end
     end
 
-    context 'when file is present' do
+    context 'file is present' do
       let(:file) { attachment_fixture('avatar.gif') }
 
-      context 'when remote_url is blank' do
+      context 'remote_url is blank' do
         let(:remote_url) { '' }
 
         it 'returns false' do
-          expect(subject).to be false
+          is_expected.to be false
         end
       end
 
-      context 'when remote_url is present' do
+      context 'remote_url is present' do
         let(:remote_url) { 'remote_url' }
 
         it 'returns true' do
-          expect(subject).to be false
+          is_expected.to be false
         end
       end
     end
@@ -96,8 +94,8 @@ RSpec.describe MediaAttachment do
     end
 
     it 'sets meta' do
-      expect(media.file.meta['original']['width']).to eq 128
-      expect(media.file.meta['original']['height']).to eq 128
+      expect(media.file.meta["original"]["width"]).to eq 128
+      expect(media.file.meta["original"]["height"]).to eq 128
     end
   end
 
@@ -120,9 +118,9 @@ RSpec.describe MediaAttachment do
         end
 
         it 'sets meta' do
-          expect(media.file.meta['original']['width']).to eq fixture[:width]
-          expect(media.file.meta['original']['height']).to eq fixture[:height]
-          expect(media.file.meta['original']['aspect']).to eq fixture[:aspect]
+          expect(media.file.meta["original"]["width"]).to eq fixture[:width]
+          expect(media.file.meta["original"]["height"]).to eq fixture[:height]
+          expect(media.file.meta["original"]["aspect"]).to eq fixture[:aspect]
         end
       end
     end
@@ -140,7 +138,7 @@ RSpec.describe MediaAttachment do
     end
 
     it 'extracts thumbnail' do
-      expect(media.thumbnail.present?).to be true
+      expect(media.thumbnail.present?).to eq true
     end
 
     it 'extracts colors from thumbnail' do
@@ -156,12 +154,12 @@ RSpec.describe MediaAttachment do
     let(:media) { MediaAttachment.create(account: Fabricate(:account), file: attachment_fixture('attachment.jpg')) }
 
     it 'sets meta for different style' do
-      expect(media.file.meta['original']['width']).to eq 600
-      expect(media.file.meta['original']['height']).to eq 400
-      expect(media.file.meta['original']['aspect']).to eq 1.5
-      expect(media.file.meta['small']['width']).to eq 588
-      expect(media.file.meta['small']['height']).to eq 392
-      expect(media.file.meta['small']['aspect']).to eq 1.5
+      expect(media.file.meta["original"]["width"]).to eq 600
+      expect(media.file.meta["original"]["height"]).to eq 400
+      expect(media.file.meta["original"]["aspect"]).to eq 1.5
+      expect(media.file.meta["small"]["width"]).to eq 588
+      expect(media.file.meta["small"]["height"]).to eq 392
+      expect(media.file.meta["small"]["aspect"]).to eq 1.5
     end
 
     it 'gives the file a random name' do

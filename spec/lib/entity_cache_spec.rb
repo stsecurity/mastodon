@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe EntityCache do
@@ -9,12 +7,12 @@ RSpec.describe EntityCache do
   describe '#emoji' do
     subject { EntityCache.instance.emoji(shortcodes, domain) }
 
-    context 'when called with an empty list of shortcodes' do
+    context 'called with an empty list of shortcodes' do
       let(:shortcodes) { [] }
       let(:domain)     { 'example.org' }
 
       it 'returns an empty array' do
-        expect(subject).to eq []
+        is_expected.to eq []
       end
     end
   end

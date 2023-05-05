@@ -25,13 +25,15 @@ class Api::V2::Admin::AccountsController < Api::V1::Admin::AccountsController
   def translated_filter_params
     translated_params = filter_params.slice(*AccountFilter::KEYS)
 
-    translated_params[:role_ids] = UserRole.that_can(:manage_reports).map(&:id) if params[:permissions] == 'staff'
+    if params[:permissions] == 'staff'
+      translated_params[:role_ids] = UserRole.that_can(:manage_reports).map(&:id)
+    end
 
     translated_params
   end
 
   def filter_params
-    params.permit(*FILTER_PARAMS, role_ids: [])
+    params.permit(*FILTER_PARAMS)
   end
 
   def pagination_params(core_params)

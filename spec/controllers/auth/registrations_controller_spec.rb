@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-RSpec.describe Auth::RegistrationsController do
+RSpec.describe Auth::RegistrationsController, type: :controller do
   render_views
 
   shared_examples 'checks for enabled registrations' do |path|
@@ -33,42 +31,27 @@ RSpec.describe Auth::RegistrationsController do
   end
 
   describe 'GET #edit' do
-    before do
-      request.env['devise.mapping'] = Devise.mappings[:user]
+    it 'returns http success' do
+      request.env["devise.mapping"] = Devise.mappings[:user]
       sign_in(Fabricate(:user))
       get :edit
-    end
-
-    it 'returns http success' do
       expect(response).to have_http_status(200)
-    end
-
-    it 'returns private cache control header' do
-      expect(response.headers['Cache-Control']).to include('private, no-store')
     end
   end
 
   describe 'GET #update' do
-    let(:user) { Fabricate(:user) }
-
-    before do
-      request.env['devise.mapping'] = Devise.mappings[:user]
-      sign_in(user, scope: :user)
-      post :update
-    end
-
     it 'returns http success' do
+      request.env["devise.mapping"] = Devise.mappings[:user]
+      sign_in(Fabricate(:user), scope: :user)
+      post :update
       expect(response).to have_http_status(200)
     end
 
-    it 'returns private cache control headers' do
-      expect(response.headers['Cache-Control']).to include('private, no-store')
-    end
-
     context 'when suspended' do
-      let(:user) { Fabricate(:user, account_attributes: { username: 'test', suspended_at: Time.now.utc }) }
-
       it 'returns http forbidden' do
+        request.env["devise.mapping"] = Devise.mappings[:user]
+        sign_in(Fabricate(:user, account_attributes: { username: 'test', suspended_at: Time.now.utc }), scope: :user)
+        post :update
         expect(response).to have_http_status(403)
       end
     end
@@ -76,7 +59,7 @@ RSpec.describe Auth::RegistrationsController do
 
   describe 'GET #new' do
     before do
-      request.env['devise.mapping'] = Devise.mappings[:user]
+      request.env["devise.mapping"] = Devise.mappings[:user]
     end
 
     context do
@@ -104,24 +87,24 @@ RSpec.describe Auth::RegistrationsController do
     end
 
     around do |example|
-      I18n.with_locale(I18n.locale) do
-        example.run
-      end
+      current_locale = I18n.locale
+      example.run
+      I18n.locale = current_locale
     end
 
-    before { request.env['devise.mapping'] = Devise.mappings[:user] }
+    before { request.env["devise.mapping"] = Devise.mappings[:user] }
 
     context do
-      subject do
-        Setting.registrations_mode = 'open'
-        request.headers['Accept-Language'] = accept_language
-        post :create, params: { user: { account_attributes: { username: 'test' }, email: 'test@example.com', password: '12345678', password_confirmation: '12345678', agreement: 'true' } }
-      end
-
       around do |example|
         registrations_mode = Setting.registrations_mode
         example.run
         Setting.registrations_mode = registrations_mode
+      end
+
+      subject do
+        Setting.registrations_mode = 'open'
+        request.headers["Accept-Language"] = accept_language
+        post :create, params: { user: { account_attributes: { username: 'test' }, email: 'test@example.com', password: '12345678', password_confirmation: '12345678', agreement: 'true' } }
       end
 
       it 'redirects to setup' do
@@ -138,16 +121,16 @@ RSpec.describe Auth::RegistrationsController do
     end
 
     context 'when user has not agreed to terms of service' do
-      subject do
-        Setting.registrations_mode = 'open'
-        request.headers['Accept-Language'] = accept_language
-        post :create, params: { user: { account_attributes: { username: 'test' }, email: 'test@example.com', password: '12345678', password_confirmation: '12345678', agreement: 'false' } }
-      end
-
       around do |example|
         registrations_mode = Setting.registrations_mode
         example.run
         Setting.registrations_mode = registrations_mode
+      end
+
+      subject do
+        Setting.registrations_mode = 'open'
+        request.headers["Accept-Language"] = accept_language
+        post :create, params: { user: { account_attributes: { username: 'test' }, email: 'test@example.com', password: '12345678', password_confirmation: '12345678', agreement: 'false' } }
       end
 
       it 'does not create user' do
@@ -157,19 +140,19 @@ RSpec.describe Auth::RegistrationsController do
       end
     end
 
-    context 'with Approval-based registrations without invite' do
+    context 'approval-based registrations without invite' do
+      around do |example|
+        registrations_mode = Setting.registrations_mode
+        example.run
+        Setting.registrations_mode = registrations_mode
+      end
+
       subject do
         Setting.registrations_mode = 'approved'
-        request.headers['Accept-Language'] = accept_language
+        request.headers["Accept-Language"] = accept_language
         post :create, params: { user: { account_attributes: { username: 'test' }, email: 'test@example.com', password: '12345678', password_confirmation: '12345678', agreement: 'true' } }
       end
 
-      around do |example|
-        registrations_mode = Setting.registrations_mode
-        example.run
-        Setting.registrations_mode = registrations_mode
-      end
-
       it 'redirects to setup' do
         subject
         expect(response).to redirect_to auth_setup_path
@@ -180,22 +163,22 @@ RSpec.describe Auth::RegistrationsController do
         user = User.find_by(email: 'test@example.com')
         expect(user).to_not be_nil
         expect(user.locale).to eq(accept_language)
-        expect(user.approved).to be(false)
+        expect(user.approved).to eq(false)
       end
     end
 
-    context 'with Approval-based registrations with expired invite' do
+    context 'approval-based registrations with expired invite' do
+      around do |example|
+        registrations_mode = Setting.registrations_mode
+        example.run
+        Setting.registrations_mode = registrations_mode
+      end
+
       subject do
         Setting.registrations_mode = 'approved'
-        request.headers['Accept-Language'] = accept_language
+        request.headers["Accept-Language"] = accept_language
         invite = Fabricate(:invite, max_uses: nil, expires_at: 1.hour.ago)
-        post :create, params: { user: { account_attributes: { username: 'test' }, email: 'test@example.com', password: '12345678', password_confirmation: '12345678', invite_code: invite.code, agreement: 'true' } }
-      end
-
-      around do |example|
-        registrations_mode = Setting.registrations_mode
-        example.run
-        Setting.registrations_mode = registrations_mode
+        post :create, params: { user: { account_attributes: { username: 'test' }, email: 'test@example.com', password: '12345678', password_confirmation: '12345678', 'invite_code': invite.code, agreement: 'true' } }
       end
 
       it 'redirects to setup' do
@@ -208,20 +191,11 @@ RSpec.describe Auth::RegistrationsController do
         user = User.find_by(email: 'test@example.com')
         expect(user).to_not be_nil
         expect(user.locale).to eq(accept_language)
-        expect(user.approved).to be(false)
+        expect(user.approved).to eq(false)
       end
     end
 
-    context 'with Approval-based registrations with valid invite and required invite text' do
-      subject do
-        inviter = Fabricate(:user, confirmed_at: 2.days.ago)
-        Setting.registrations_mode = 'approved'
-        Setting.require_invite_text = true
-        request.headers['Accept-Language'] = accept_language
-        invite = Fabricate(:invite, user: inviter, max_uses: nil, expires_at: 1.hour.from_now)
-        post :create, params: { user: { account_attributes: { username: 'test' }, email: 'test@example.com', password: '12345678', password_confirmation: '12345678', invite_code: invite.code, agreement: 'true' } }
-      end
-
+    context 'approval-based registrations with valid invite and required invite text' do
       around do |example|
         registrations_mode = Setting.registrations_mode
         require_invite_text = Setting.require_invite_text
@@ -230,6 +204,15 @@ RSpec.describe Auth::RegistrationsController do
         Setting.registrations_mode = registrations_mode
       end
 
+      subject do
+        inviter = Fabricate(:user, confirmed_at: 2.days.ago)
+        Setting.registrations_mode = 'approved'
+        Setting.require_invite_text = true
+        request.headers["Accept-Language"] = accept_language
+        invite = Fabricate(:invite, user: inviter, max_uses: nil, expires_at: 1.hour.from_now)
+        post :create, params: { user: { account_attributes: { username: 'test' }, email: 'test@example.com', password: '12345678', password_confirmation: '12345678', 'invite_code': invite.code, agreement: 'true' } }
+      end
+
       it 'redirects to setup' do
         subject
         expect(response).to redirect_to auth_setup_path
@@ -240,7 +223,7 @@ RSpec.describe Auth::RegistrationsController do
         user = User.find_by(email: 'test@example.com')
         expect(user).to_not be_nil
         expect(user.locale).to eq(accept_language)
-        expect(user.approved).to be(true)
+        expect(user.approved).to eq(true)
       end
     end
 
@@ -262,7 +245,7 @@ RSpec.describe Auth::RegistrationsController do
     end
 
     it 'returns http not found' do
-      expect(response).to have_http_status(404)
+      expect(response).to have_http_status(:not_found)
     end
 
     it 'does not delete user' do

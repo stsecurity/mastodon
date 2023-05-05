@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe ApplicationController do
+describe ApplicationController, type: :controller do
   controller do
     include ExportControllerConcern
 
@@ -29,7 +29,7 @@ describe ApplicationController do
 
     it 'returns unauthorized when not signed in' do
       get :index, format: :csv
-      expect(response).to have_http_status(401)
+      expect(response).to have_http_status(:unauthorized)
     end
   end
 end

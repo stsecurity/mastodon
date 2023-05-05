@@ -3,7 +3,7 @@ da:
   activerecord:
     attributes:
       poll:
-        expires_at: 截止时间
+        expires_at: Deadline
         options: Valgmuligheder
       user:
         agreement: Tjenesteaftale

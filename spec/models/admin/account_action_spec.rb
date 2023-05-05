@@ -1,26 +1,23 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-RSpec.describe Admin::AccountAction do
+RSpec.describe Admin::AccountAction, type: :model do
   let(:account_action) { described_class.new }
 
   describe '#save!' do
     subject              { account_action.save! }
-
     let(:account)        { Fabricate(:user, role: UserRole.find_by(name: 'Admin')).account }
     let(:target_account) { Fabricate(:account) }
     let(:type)           { 'disable' }
 
     before do
       account_action.assign_attributes(
-        type: type,
+        type:            type,
         current_account: account,
-        target_account: target_account
+        target_account:  target_account
       )
     end
 
-    context 'when type is "disable"' do
+    context 'type is "disable"' do
       let(:type) { 'disable' }
 
       it 'disable user' do
@@ -29,7 +26,7 @@ RSpec.describe Admin::AccountAction do
       end
     end
 
-    context 'when type is "silence"' do
+    context 'type is "silence"' do
       let(:type) { 'silence' }
 
       it 'silences account' do
@@ -38,7 +35,7 @@ RSpec.describe Admin::AccountAction do
       end
     end
 
-    context 'when type is "suspend"' do
+    context 'type is "suspend"' do
       let(:type) { 'suspend' }
 
       it 'suspends account' do
@@ -75,7 +72,7 @@ RSpec.describe Admin::AccountAction do
   describe '#report' do
     subject { account_action.report }
 
-    context 'with report_id.present?' do
+    context 'report_id.present?' do
       before do
         account_action.report_id = Fabricate(:report).id
       end
@@ -85,7 +82,7 @@ RSpec.describe Admin::AccountAction do
       end
     end
 
-    context 'with !report_id.present?' do
+    context '!report_id.present?' do
       it 'returns nil' do
         expect(subject).to be_nil
       end
@@ -95,7 +92,7 @@ RSpec.describe Admin::AccountAction do
   describe '#with_report?' do
     subject { account_action.with_report? }
 
-    context 'with !report.nil?' do
+    context '!report.nil?' do
       before do
         account_action.report_id = Fabricate(:report).id
       end
@@ -105,7 +102,7 @@ RSpec.describe Admin::AccountAction do
       end
     end
 
-    context 'with !(!report.nil?)' do
+    context '!(!report.nil?)' do
       it 'returns false' do
         expect(subject).to be false
       end
@@ -115,7 +112,7 @@ RSpec.describe Admin::AccountAction do
   describe '.types_for_account' do
     subject { described_class.types_for_account(account) }
 
-    context 'when Account.local?' do
+    context 'account.local?' do
       let(:account) { Fabricate(:account, domain: nil) }
 
       it 'returns ["none", "disable", "sensitive", "silence", "suspend"]' do
@@ -123,7 +120,7 @@ RSpec.describe Admin::AccountAction do
       end
     end
 
-    context 'with !account.local?' do
+    context '!account.local?' do
       let(:account) { Fabricate(:account, domain: 'hoge.com') }
 
       it 'returns ["sensitive", "silence", "suspend"]' do

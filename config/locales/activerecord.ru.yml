@@ -29,10 +29,6 @@ ru:
           attributes:
             website:
               invalid: не является допустимым URL
-        import:
-          attributes:
-            data:
-              malformed: неверный формат
         status:
           attributes:
             reblog:

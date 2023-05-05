@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-RSpec.describe Api::V1::Emails::ConfirmationsController do
+RSpec.describe Api::V1::Emails::ConfirmationsController, type: :controller do
   let(:confirmed_at) { nil }
   let(:user)         { Fabricate(:user, confirmed_at: confirmed_at) }
   let(:app)          { Fabricate(:application) }
@@ -15,14 +13,14 @@ RSpec.describe Api::V1::Emails::ConfirmationsController do
         allow(controller).to receive(:doorkeeper_token) { token }
       end
 
-      context 'when from a random app' do
+      context 'from a random app' do
         it 'returns http forbidden' do
           post :create
-          expect(response).to have_http_status(403)
+          expect(response).to have_http_status(:forbidden)
         end
       end
 
-      context 'when from an app that created the account' do
+      context 'from an app that created the account' do
         before do
           user.update(created_by_application: token.application)
         end
@@ -32,10 +30,10 @@ RSpec.describe Api::V1::Emails::ConfirmationsController do
 
           it 'returns http forbidden' do
             post :create
-            expect(response).to have_http_status(403)
+            expect(response).to have_http_status(:forbidden)
           end
 
-          context 'with user changed e-mail and has not confirmed it' do
+          context 'but user changed e-mail and has not confirmed it' do
             before do
               user.update(email: 'foo@bar.com')
             end
@@ -59,7 +57,7 @@ RSpec.describe Api::V1::Emails::ConfirmationsController do
     context 'without an oauth token' do
       it 'returns http unauthorized' do
         post :create
-        expect(response).to have_http_status(401)
+        expect(response).to have_http_status(:unauthorized)
       end
     end
   end

@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-RSpec.describe TagFollow do
+RSpec.describe TagFollow, type: :model do
 end

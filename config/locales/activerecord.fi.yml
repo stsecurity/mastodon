@@ -8,7 +8,7 @@ fi:
       user:
         agreement: Palvelusopimus
         email: Sähköpostiosoite
-        locale: Alue
+        locale: Paikallinen
         password: Salasana
       user/account:
         username: Käyttäjätunnus
@@ -24,11 +24,11 @@ fi:
         admin/webhook:
           attributes:
             url:
-              invalid: ei ole kelvollinen verkko-osoite
+              invalid: ei ole kelvollinen URL
         doorkeeper/application:
           attributes:
             website:
-              invalid: ei ole kelvollinen verkko-osoite
+              invalid: ei ole kelvollinen URL
         import:
           attributes:
             data:

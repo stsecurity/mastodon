@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-RSpec.describe Backup do
+RSpec.describe Backup, type: :model do
 end

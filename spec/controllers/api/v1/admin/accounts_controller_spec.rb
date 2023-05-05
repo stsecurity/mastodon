@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-RSpec.describe Api::V1::Admin::AccountsController do
+RSpec.describe Api::V1::Admin::AccountsController, type: :controller do
   render_views
 
   let(:role)   { UserRole.find_by(name: 'Moderator') }
@@ -67,7 +65,7 @@ RSpec.describe Api::V1::Admin::AccountsController do
         it "returns the correct accounts (#{expected_results.inspect})" do
           json = body_as_json
 
-          expect(json.map { |a| a[:id].to_i }).to eq(expected_results.map { |symbol| send(symbol).id })
+          expect(json.map { |a| a[:id].to_i }).to eq (expected_results.map { |symbol| send(symbol).id })
         end
       end
     end
@@ -102,15 +100,6 @@ RSpec.describe Api::V1::Admin::AccountsController do
     it 'approves user' do
       expect(account.reload.user_approved?).to be true
     end
-
-    it 'logs action' do
-      log_item = Admin::ActionLog.last
-
-      expect(log_item).to_not be_nil
-      expect(log_item.action).to eq :approve
-      expect(log_item.account_id).to eq user.account_id
-      expect(log_item.target_id).to eq account.user.id
-    end
   end
 
   describe 'POST #reject' do
@@ -128,15 +117,6 @@ RSpec.describe Api::V1::Admin::AccountsController do
 
     it 'removes user' do
       expect(User.where(id: account.user.id).count).to eq 0
-    end
-
-    it 'logs action' do
-      log_item = Admin::ActionLog.last
-
-      expect(log_item).to_not be_nil
-      expect(log_item.action).to eq :reject
-      expect(log_item.account_id).to eq user.account_id
-      expect(log_item.target_id).to eq account.user.id
     end
   end
 

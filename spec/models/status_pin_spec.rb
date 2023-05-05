@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-RSpec.describe StatusPin do
+RSpec.describe StatusPin, type: :model do
   describe 'validations' do
     it 'allows pins of own statuses' do
       account = Fabricate(:account)

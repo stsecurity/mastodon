@@ -1,14 +1,10 @@
-# frozen_string_literal: true
-
 GC.disable
 
 if ENV['DISABLE_SIMPLECOV'] != 'true'
   require 'simplecov'
   SimpleCov.start 'rails' do
-    add_group 'Policies', 'app/policies'
-    add_group 'Presenters', 'app/presenters'
-    add_group 'Serializers', 'app/serializers'
     add_group 'Services', 'app/services'
+    add_group 'Presenters', 'app/presenters'
     add_group 'Validators', 'app/validators'
   end
 end
@@ -16,7 +12,7 @@ end
 gc_counter = -1
 
 RSpec.configure do |config|
-  config.example_status_persistence_file_path = 'tmp/rspec/examples.txt'
+  config.example_status_persistence_file_path = "tmp/rspec/examples.txt"
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
@@ -38,7 +34,7 @@ RSpec.configure do |config|
 
   config.after :suite do
     gc_counter = 0
-    FileUtils.rm_rf(Dir[Rails.root.join('spec', 'test_files')])
+    FileUtils.rm_rf(Dir["#{Rails.root}/spec/test_files/"])
   end
 
   config.after :each do
@@ -64,7 +60,7 @@ end
 
 def expect_push_bulk_to_match(klass, matcher)
   expect(Sidekiq::Client).to receive(:push_bulk).with(hash_including({
-    'class' => klass,
-    'args' => matcher,
+    "class" => klass,
+    "args" => matcher
   }))
 end

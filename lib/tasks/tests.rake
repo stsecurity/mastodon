@@ -43,21 +43,6 @@ namespace :tests do
         puts 'CustomFilterKeyword records not created as expected'
         exit(1)
       end
-
-      unless Admin::ActionLog.find_by(target_type: 'DomainBlock', target_id: 1).human_identifier == 'example.org'
-        puts 'Admin::ActionLog domain block records not updated as expected'
-        exit(1)
-      end
-
-      unless Admin::ActionLog.find_by(target_type: 'EmailDomainBlock', target_id: 1).human_identifier == 'example.org'
-        puts 'Admin::ActionLog email domain block records not updated as expected'
-        exit(1)
-      end
-
-      unless User.find(1).settings['notification_emails.favourite'] == true && User.find(1).settings['notification_emails.mention'] == false
-        puts 'User settings not kept as expected'
-        exit(1)
-      end
     end
 
     desc 'Populate the database with test data for 2.4.3'
@@ -99,21 +84,16 @@ namespace :tests do
         VALUES
           (1, 'destroy', 'Account', 1, now(), now()),
           (1, 'destroy', 'User', 1, now(), now()),
-          (1, 'destroy', 'DomainBlock', 1, now(), now()),
-          (1, 'destroy', 'EmailDomainBlock', 1, now(), now()),
+          (1, 'destroy', 'DomainBlock', 1312, now(), now()),
+          (1, 'destroy', 'EmailDomainBlock', 1312, now(), now()),
           (1, 'destroy', 'Status', 1, now(), now()),
           (1, 'destroy', 'CustomEmoji', 3, now(), now());
-
-        INSERT INTO "settings"
-          (id, thing_type, thing_id, var, value, created_at, updated_at)
-        VALUES
-          (3, 'User', 1, 'notification_emails', E'--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\nfollow: false\nreblog: true\nfavourite: true\nmention: false\nfollow_request: true\ndigest: true\nreport: true\npending_account: false\ntrending_tag: true\nappeal: true\n', now(), now());
       SQL
     end
 
     desc 'Populate the database with test data for 2.4.0'
     task populate_v2_4: :environment do # rubocop:disable Naming/VariableNumber
-      ActiveRecord::Base.connection.execute(<<~SQL.squish)
+      ActiveRecord::Base.connection.execute(<<~SQL)
         INSERT INTO "settings"
           (id, thing_type, thing_id, var, value, created_at, updated_at)
         VALUES

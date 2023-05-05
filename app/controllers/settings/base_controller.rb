@@ -14,7 +14,7 @@ class Settings::BaseController < ApplicationController
   end
 
   def set_cache_headers
-    response.cache_control.replace(private: true, no_store: true)
+    response.headers['Cache-Control'] = 'no-cache, no-store, max-age=0, must-revalidate'
   end
 
   def require_not_suspended!

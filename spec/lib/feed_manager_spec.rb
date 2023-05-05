@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe FeedManager do
@@ -27,7 +25,7 @@ RSpec.describe FeedManager do
     let(:bob)   { Fabricate(:account, username: 'bob', domain: 'example.com') }
     let(:jeff)  { Fabricate(:account, username: 'jeff') }
 
-    context 'with home feed' do
+    context 'for home feed' do
       it 'returns false for followee\'s status' do
         status = Fabricate(:status, text: 'Hello world', account: alice)
         bob.follow!(alice)
@@ -39,18 +37,6 @@ RSpec.describe FeedManager do
         reblog = Fabricate(:status, reblog: status, account: alice)
         bob.follow!(alice)
         expect(FeedManager.instance.filter?(:home, reblog, bob)).to be false
-      end
-
-      it 'returns true for post from account who blocked me' do
-        status = Fabricate(:status, text: 'Hello, World', account: alice)
-        alice.block!(bob)
-        expect(FeedManager.instance.filter?(:home, status, bob)).to be true
-      end
-
-      it 'returns true for post from blocked account' do
-        status = Fabricate(:status, text: 'Hello, World', account: alice)
-        bob.block!(alice)
-        expect(FeedManager.instance.filter?(:home, status, bob)).to be true
       end
 
       it 'returns true for reblog by followee of blocked account' do
@@ -155,7 +141,7 @@ RSpec.describe FeedManager do
       end
     end
 
-    context 'with mentions feed' do
+    context 'for mentions feed' do
       it 'returns true for status that mentions blocked account' do
         bob.block!(jeff)
         status = PostStatusService.new.call(alice, text: 'Hey @jeff')
@@ -188,7 +174,7 @@ RSpec.describe FeedManager do
     it 'trims timelines if they will have more than FeedManager::MAX_ITEMS' do
       account = Fabricate(:account)
       status = Fabricate(:status)
-      members = Array.new(FeedManager::MAX_ITEMS) { |count| [count, count] }
+      members = FeedManager::MAX_ITEMS.times.map { |count| [count, count] }
       redis.zadd("feed:home:#{account.id}", members)
 
       FeedManager.instance.push_to_home(account, status)
@@ -196,7 +182,7 @@ RSpec.describe FeedManager do
       expect(redis.zcard("feed:home:#{account.id}")).to eq FeedManager::MAX_ITEMS
     end
 
-    context 'with reblogs' do
+    context 'reblogs' do
       it 'saves reblogs of unseen statuses' do
         account = Fabricate(:account)
         reblogged = Fabricate(:status)
@@ -233,7 +219,7 @@ RSpec.describe FeedManager do
       it 'does not save a new reblog of a recently-reblogged status' do
         account = Fabricate(:account)
         reblogged = Fabricate(:status)
-        reblogs = Array.new(2) { Fabricate(:status, reblog: reblogged) }
+        reblogs = 2.times.map { Fabricate(:status, reblog: reblogged) }
 
         # The first reblog will be accepted
         FeedManager.instance.push_to_home(account, reblogs.first)
@@ -262,7 +248,7 @@ RSpec.describe FeedManager do
       it 'does not save a new reblog of a multiply-reblogged-then-unreblogged status' do
         account   = Fabricate(:account)
         reblogged = Fabricate(:status)
-        reblogs = Array.new(3) { Fabricate(:status, reblog: reblogged) }
+        reblogs = 3.times.map { Fabricate(:status, reblog: reblogged) }
 
         # Accept the reblogs
         FeedManager.instance.push_to_home(account, reblogs[0])
@@ -278,7 +264,7 @@ RSpec.describe FeedManager do
       it 'saves a new reblog of a long-ago-reblogged status' do
         account = Fabricate(:account)
         reblogged = Fabricate(:status)
-        reblogs = Array.new(2) { Fabricate(:status, reblog: reblogged) }
+        reblogs = 2.times.map { Fabricate(:status, reblog: reblogged) }
 
         # The first reblog will be accepted
         FeedManager.instance.push_to_home(account, reblogs.first)
@@ -299,7 +285,7 @@ RSpec.describe FeedManager do
       status = Fabricate(:status, reblog: reblog)
       FeedManager.instance.push_to_home(account, status)
 
-      expect(FeedManager.instance.push_to_home(account, reblog)).to be false
+      expect(FeedManager.instance.push_to_home(account, reblog)).to eq false
     end
   end
 
@@ -324,7 +310,7 @@ RSpec.describe FeedManager do
       status = Fabricate(:status, reblog: reblog)
       FeedManager.instance.push_to_list(list, status)
 
-      expect(FeedManager.instance.push_to_list(list, reblog)).to be false
+      expect(FeedManager.instance.push_to_list(list, reblog)).to eq false
     end
 
     context 'when replies policy is set to no replies' do
@@ -334,19 +320,19 @@ RSpec.describe FeedManager do
 
       it 'pushes statuses that are not replies' do
         status = Fabricate(:status, text: 'Hello world', account: bob)
-        expect(FeedManager.instance.push_to_list(list, status)).to be true
+        expect(FeedManager.instance.push_to_list(list, status)).to eq true
       end
 
       it 'pushes statuses that are replies to list owner' do
         status = Fabricate(:status, text: 'Hello world', account: owner)
         reply  = Fabricate(:status, text: 'Nay', thread: status, account: bob)
-        expect(FeedManager.instance.push_to_list(list, reply)).to be true
+        expect(FeedManager.instance.push_to_list(list, reply)).to eq true
       end
 
       it 'does not push replies to another member of the list' do
         status = Fabricate(:status, text: 'Hello world', account: alice)
         reply  = Fabricate(:status, text: 'Nay', thread: status, account: bob)
-        expect(FeedManager.instance.push_to_list(list, reply)).to be false
+        expect(FeedManager.instance.push_to_list(list, reply)).to eq false
       end
     end
 
@@ -357,25 +343,25 @@ RSpec.describe FeedManager do
 
       it 'pushes statuses that are not replies' do
         status = Fabricate(:status, text: 'Hello world', account: bob)
-        expect(FeedManager.instance.push_to_list(list, status)).to be true
+        expect(FeedManager.instance.push_to_list(list, status)).to eq true
       end
 
       it 'pushes statuses that are replies to list owner' do
         status = Fabricate(:status, text: 'Hello world', account: owner)
         reply  = Fabricate(:status, text: 'Nay', thread: status, account: bob)
-        expect(FeedManager.instance.push_to_list(list, reply)).to be true
+        expect(FeedManager.instance.push_to_list(list, reply)).to eq true
       end
 
       it 'pushes replies to another member of the list' do
         status = Fabricate(:status, text: 'Hello world', account: alice)
         reply  = Fabricate(:status, text: 'Nay', thread: status, account: bob)
-        expect(FeedManager.instance.push_to_list(list, reply)).to be true
+        expect(FeedManager.instance.push_to_list(list, reply)).to eq true
       end
 
       it 'does not push replies to someone not a member of the list' do
         status = Fabricate(:status, text: 'Hello world', account: eve)
         reply  = Fabricate(:status, text: 'Nay', thread: status, account: bob)
-        expect(FeedManager.instance.push_to_list(list, reply)).to be false
+        expect(FeedManager.instance.push_to_list(list, reply)).to eq false
       end
     end
 
@@ -386,25 +372,25 @@ RSpec.describe FeedManager do
 
       it 'pushes statuses that are not replies' do
         status = Fabricate(:status, text: 'Hello world', account: bob)
-        expect(FeedManager.instance.push_to_list(list, status)).to be true
+        expect(FeedManager.instance.push_to_list(list, status)).to eq true
       end
 
       it 'pushes statuses that are replies to list owner' do
         status = Fabricate(:status, text: 'Hello world', account: owner)
         reply  = Fabricate(:status, text: 'Nay', thread: status, account: bob)
-        expect(FeedManager.instance.push_to_list(list, reply)).to be true
+        expect(FeedManager.instance.push_to_list(list, reply)).to eq true
       end
 
       it 'pushes replies to another member of the list' do
         status = Fabricate(:status, text: 'Hello world', account: alice)
         reply  = Fabricate(:status, text: 'Nay', thread: status, account: bob)
-        expect(FeedManager.instance.push_to_list(list, reply)).to be true
+        expect(FeedManager.instance.push_to_list(list, reply)).to eq true
       end
 
       it 'pushes replies to someone not a member of the list' do
         status = Fabricate(:status, text: 'Hello world', account: eve)
         reply  = Fabricate(:status, text: 'Nay', thread: status, account: bob)
-        expect(FeedManager.instance.push_to_list(list, reply)).to be true
+        expect(FeedManager.instance.push_to_list(list, reply)).to eq true
       end
     end
   end
@@ -418,7 +404,7 @@ RSpec.describe FeedManager do
 
       FeedManager.instance.merge_into_home(account, reblog.account)
 
-      expect(redis.zscore('feed:home:0', reblog.id)).to be_nil
+      expect(redis.zscore("feed:home:0", reblog.id)).to eq nil
     end
   end
 
@@ -459,7 +445,7 @@ RSpec.describe FeedManager do
 
     it 'leaves a multiply-reblogged status if another reblog was in feed' do
       reblogged = Fabricate(:status)
-      reblogs   = Array.new(3) { Fabricate(:status, reblog: reblogged) }
+      reblogs   = 3.times.map { Fabricate(:status, reblog: reblogged) }
 
       reblogs.each do |reblog|
         FeedManager.instance.push_to_home(receiver, reblog)
