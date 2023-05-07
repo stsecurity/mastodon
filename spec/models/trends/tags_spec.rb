@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Trends::Tags do
@@ -21,8 +23,10 @@ RSpec.describe Trends::Tags do
     end
   end
 
-  describe '#get' do
-    pending
+  describe '#query' do
+    it 'returns a composable query scope' do
+      expect(subject.query).to be_a Trends::Query
+    end
   end
 
   describe '#refresh' do
@@ -47,11 +51,11 @@ RSpec.describe Trends::Tags do
       end
 
       it 'calculates and re-calculates scores' do
-        expect(subject.get(false, 10)).to eq [tag1, tag3]
+        expect(subject.query.limit(10).to_a).to eq [tag1, tag3]
       end
 
       it 'omits hashtags below threshold' do
-        expect(subject.get(false, 10)).to_not include(tag2)
+        expect(subject.query.limit(10).to_a).to_not include(tag2)
       end
     end
 

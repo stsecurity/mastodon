@@ -42,7 +42,7 @@ module AccountAssociations
     has_many :account_moderation_notes, dependent: :destroy, inverse_of: :account
     has_many :targeted_moderation_notes, class_name: 'AccountModerationNote', foreign_key: :target_account_id, dependent: :destroy, inverse_of: :target_account
     has_many :account_warnings, dependent: :destroy, inverse_of: :account
-    has_many :targeted_account_warnings, class_name: 'AccountWarning', foreign_key: :target_account_id, dependent: :destroy, inverse_of: :target_account
+    has_many :strikes, class_name: 'AccountWarning', foreign_key: :target_account_id, dependent: :destroy, inverse_of: :target_account
 
     # Lists (that the account is on, not owned by the account)
     has_many :list_accounts, inverse_of: :account, dependent: :destroy
@@ -68,5 +68,8 @@ module AccountAssociations
 
     # Account statuses cleanup policy
     has_one :statuses_cleanup_policy, class_name: 'AccountStatusesCleanupPolicy', inverse_of: :account, dependent: :destroy
+
+    # Imports
+    has_many :bulk_imports, inverse_of: :account, dependent: :delete_all
   end
 end
