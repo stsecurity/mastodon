@@ -471,9 +471,7 @@ id:
       destroyed_msg: Data dari %{domain} masuk antrean dihapus dalam waktu dekat.
       empty: Domain tidak ditemukan.
       known_accounts:
-        one: "%{count} akun dikenal"
-        other: "%{count} akun dikenal"
-        zero: Tidak ada akun yang dikenal
+        other: "%{count} akun yang dikenal"
       moderation:
         all: Semua
         limited: Terbatas
@@ -758,9 +756,7 @@ id:
         publishers:
           no_publisher_selected: Tidak ada penerbit yang diubah karena tidak ada yang dipilih
         shared_by_over_week:
-          one: Dibagikan oleh satu orang lebih dari seminggu lalu
-          other: Dibagikan oleh %{count} orang lebih dari seminggu lalu
-          zero: Tidak dibagikan siapapun lebih dari seminggu lalu
+          other: Dibagikan oleh %{count} orang selama seminggu terakhir
         title: Tautan sedang tren
         usage_comparison: Dibagikan %{today} kali hari ini, dibandingkan %{yesterday} kemarin
       only_allowed: Yang diizinkan saja

@@ -591,6 +591,11 @@ cs:
       delivery_error_hint: Není-li možné doručení po dobu %{count} dnů, bude automaticky označen za nedoručitelný.
       destroyed_msg: Data z %{domain} nyní čekají na smazání.
       empty: Nebyly nalezeny žádné domény.
+      known_accounts:
+        few: "%{count} známé účty"
+        many: "%{count} známých účtů"
+        one: "%{count} známý účet"
+        other: "%{count} známých účtů"
       moderation:
         all: Všechny
         limited: Omezený
