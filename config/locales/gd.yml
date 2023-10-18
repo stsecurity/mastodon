@@ -1293,6 +1293,7 @@ gd:
     status:
       account_status: Staid a’ chunntais
       confirming: A’ feitheamh air coileanadh an dearbhaidh on phost-d.
+      functional: Tha an cunntas agad ag obair gu slàn.
       pending: Feumaidh an sgioba againn lèirmheas a dhèanamh air d’ iarrtas. Dh’fhaoidte gun doir seo greis. Gheibh thu post-d nuair a bhios sinn air aontachadh ri d’ iarrtas.
       redirecting_to: Chan eil an cunntas gad gnìomhach on a tha e ’ga ath-stiùireadh gu %{acct}.
       self_destruct: On a tha %{domain} gu bhith dùnadh, chan fhaigh thu ach inntrigeadh cuingichte dhan chunntas agad.

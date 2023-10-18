@@ -46,7 +46,6 @@ sv:
         current_password: Av säkerhetsskäl krävs lösenordet till det nuvarande kontot
         current_username: Ange det nuvarande kontots användarnamn för att bekräfta
         digest: Skickas endast efter en lång period av inaktivitet och endast om du har fått några personliga meddelanden i din frånvaro
-        discoverable_no_directory: Tillåt att ditt konto kan ses genom rekommendationer och andra funktioner
         email: Du kommer att få ett bekräftelsemeddelande via e-post
         header: WEBP, PNG, GIF eller JPG. Högst %{size}. Kommer nedskalas till %{dimensions} pixlar
         inbox_url: Kopiera webbadressen från hemsidan av det ombud du vill använda

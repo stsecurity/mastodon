@@ -574,7 +574,6 @@ en:
       known_accounts:
         one: "%{count} known account"
         other: "%{count} known accounts"
-        zero: No known account
       moderation:
         all: All
         limited: Limited
@@ -1034,7 +1033,6 @@ en:
         shared_by_over_week:
           one: Shared by one person over the last week
           other: Shared by %{count} people over the last week
-          zero: Shared by noone over the last week
         title: Trending links
         usage_comparison: Shared %{today} times today, compared to %{yesterday} yesterday
       not_allowed_to_trend: Not allowed to trend
@@ -1872,7 +1870,6 @@ en:
     errors:
       in_reply_not_found: The post you are trying to reply to does not appear to exist.
     over_character_limit: character limit of %{max} exceeded
-    over_uncut_character_limit: Please apply a CW to anything longer than %{max} characters.
     pin_errors:
       direct: Posts that are only visible to mentioned users cannot be pinned
       limit: You have already pinned the maximum number of posts

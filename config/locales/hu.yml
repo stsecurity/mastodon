@@ -574,7 +574,6 @@ hu:
       known_accounts:
         one: "%{count} ismert fiók"
         other: "%{count} ismert fiók"
-        zero: Nincs ismert fiók
       moderation:
         all: Mind
         limited: Korlátozott
@@ -1032,9 +1031,8 @@ hu:
         publishers:
           no_publisher_selected: Nem változott meg egy közzétevő sem, mert semmi sem volt kiválasztva
         shared_by_over_week:
-          one: Egy ember osztotta meg az elmúlt héten
-          other: "%{count} ember osztotta meg az elmúlt héten"
-          zero: Senki sem osztotta meg az elmúlt héten
+          one: Egy ember osztotta meg a múlt héten
+          other: "%{count} ember osztotta meg a múlt héten"
         title: Felkapott hivatkozások
         usage_comparison: "%{today} alkalommal lett ma megosztva, a tegnapi %{yesterday} alkalomhoz képest"
       not_allowed_to_trend: Nem engedélyezett a trendekben
@@ -1257,6 +1255,7 @@ hu:
     status:
       account_status: Fiók állapota
       confirming: Várakozás az e-mailes visszaigazolásra.
+      functional: A fiókod teljesen működőképes.
       pending: A jelentkezésed engedélyezésre vár. Ez eltarthat egy ideig. Kapsz egy e-mailt, ha a kérelmedet jóváhagyták.
       redirecting_to: A fiókod inaktív, mert jelenleg ide %{acct} van átirányítva.
       self_destruct: Mivel a %{domain} bezár, csak korlátozott elérésed lesz a fiókodhoz.

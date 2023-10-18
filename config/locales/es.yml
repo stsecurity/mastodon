@@ -574,7 +574,6 @@ es:
       known_accounts:
         one: "%{count} cuenta conocida"
         other: "%{count} cuentas conocidas"
-        zero: Ninguna cuenta conocida
       moderation:
         all: Todos
         limited: Limitado
@@ -1032,9 +1031,8 @@ es:
         publishers:
           no_publisher_selected: No se cambió ningún editor ya que no se seleccionó ninguno
         shared_by_over_week:
-          one: Compartido por una persona en la última semana
+          one: Compartido por una persona durante la última semana
           other: Compartido por %{count} personas durante la última semana
-          zero: Compartido por nadie en la última semana
         title: Enlaces en tendencia
         usage_comparison: Compartido %{today} veces hoy, comparado con %{yesterday} ayer
       not_allowed_to_trend: No permitido para tendencia

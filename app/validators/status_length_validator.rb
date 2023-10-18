@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class StatusLengthValidator < ActiveModel::Validator
-  MAX_CHARS = 3000
-  MAX_UNCUT_CHARS = 500
+  MAX_CHARS = 500
   URL_PLACEHOLDER_CHARS = 23
   URL_PLACEHOLDER = 'x' * 23
 
@@ -10,8 +9,6 @@ class StatusLengthValidator < ActiveModel::Validator
     return unless status.local? && !status.reblog?
 
     status.errors.add(:text, I18n.t('statuses.over_character_limit', max: MAX_CHARS)) if too_long?(status)
-    status.errors.add(:text, I18n.t('statuses.over_uncut_character_limit', max: MAX_UNCUT_CHARS)) if too_long_uncut?(status)
-
   end
 
   private
@@ -20,20 +17,8 @@ class StatusLengthValidator < ActiveModel::Validator
     countable_length(combined_text(status)) > MAX_CHARS
   end
 
-  def too_long_uncut?(status)
-    (countable_uncut_length(status) > MAX_UNCUT_CHARS) && (countable_spoiler_length(status) < 1)
-  end
-
   def countable_length(str)
     str.each_grapheme_cluster.size
-  end
-
-  def countable_uncut_length(status)
-    countable_text(status.text).mb_chars.grapheme_length
-  end
-
-  def countable_spoiler_length(status)
-    status.spoiler_text.mb_chars.grapheme_length
   end
 
   def combined_text(status)

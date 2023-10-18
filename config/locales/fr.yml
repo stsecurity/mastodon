@@ -565,7 +565,6 @@ fr:
       known_accounts:
         one: "%{count} compte connu"
         other: "%{count} comptes connus"
-        zero: Pas de compte connu
       moderation:
         all: Tout
         limited: Limité

@@ -552,6 +552,9 @@ eu:
       delivery_error_hint: Banaketa ezin bada %{count} egunean egin, banaezin bezala markatuko da automatikoki.
       destroyed_msg: "%{domain} domeinuko datuak berehala ezabatzeko ilaran daude orain."
       empty: Ez da domeinurik aurkitu.
+      known_accounts:
+        one: Kontu ezagun %{count}
+        other: "%{count} kontu ezagun"
       moderation:
         all: Denak
         limited: Mugatua
