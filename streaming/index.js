@@ -247,7 +247,7 @@ const startWorker = async (workerId) => {
       redisSubscribeClient.subscribe(channel, onRedisMessage);
     }
 
-    redisSubscribeClient.subscribe(channel, callback);
+    subs[channel].push(callback);
   };
 
   /**
@@ -257,7 +257,17 @@ const startWorker = async (workerId) => {
   const unsubscribe = (channel, callback) => {
     log.silly(`Removing listener for ${channel}`);
 
-    redisSubscribeClient.unsubscribe(channel, callback);
+    if (!subs[channel]) {
+      return;
+    }
+
+    subs[channel] = subs[channel].filter(item => item !== callback);
+
+    if (subs[channel].length === 0) {
+      log.verbose(`Unsubscribe ${channel}`);
+      redisSubscribeClient.unsubscribe(channel);
+      delete subs[channel];
+    }
   };
 
   const FALSE_VALUES = [

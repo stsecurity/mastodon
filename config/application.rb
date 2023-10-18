@@ -27,7 +27,6 @@ require_relative '../lib/sanitize_ext/sanitize_config'
 require_relative '../lib/redis/namespace_extensions'
 require_relative '../lib/paperclip/url_generator_extensions'
 require_relative '../lib/paperclip/attachment_extensions'
-require_relative '../lib/paperclip/storage_extensions'
 require_relative '../lib/paperclip/lazy_thumbnail'
 require_relative '../lib/paperclip/gif_transcoder'
 require_relative '../lib/paperclip/media_type_spoof_detector_extensions'
@@ -111,7 +110,6 @@ module Mastodon
       :ka,
       :kab,
       :kk,
-      :kmr,
       :kn,
       :ko,
       :ku,
@@ -148,7 +146,6 @@ module Mastodon
       :vi,
       :zgh,
       :'zh-CN',
-      :'zh-YR',
       :'zh-HK',
       :'zh-TW',
     ]

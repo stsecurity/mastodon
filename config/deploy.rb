@@ -2,8 +2,8 @@
 
 lock '3.17.0'
 
-set :repo_url, ENV.fetch('REPO', 'https://github.com/stsecurity/mastodon.git')
-set :branch, ENV.fetch('BRANCH', 'lilymagic')
+set :repo_url, ENV.fetch('REPO', 'https://github.com/mastodon/mastodon.git')
+set :branch, ENV.fetch('BRANCH', 'master')
 
 set :application, 'mastodon'
 set :rbenv_type, :user

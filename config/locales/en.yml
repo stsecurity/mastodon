@@ -529,7 +529,6 @@ en:
       known_accounts:
         one: "%{count} known account"
         other: "%{count} known accounts"
-        zero: No known account
       moderation:
         all: All
         limited: Limited
@@ -807,7 +806,6 @@ en:
         shared_by_over_week:
           one: Shared by one person over the last week
           other: Shared by %{count} people over the last week
-          zero: Shared by noone over the last week
         title: Trending links
         usage_comparison: Shared %{today} times today, compared to %{yesterday} yesterday
       only_allowed: Only allowed
@@ -851,7 +849,6 @@ en:
         used_by_over_week:
           one: Used by one person over the last week
           other: Used by %{count} people over the last week
-          zero: Used by noone over the last week
       title: Trends
       trending: Trending
     warning_presets:
@@ -968,6 +965,7 @@ en:
     status:
       account_status: Account status
       confirming: Waiting for e-mail confirmation to be completed.
+      functional: Your account is fully operational.
       pending: Your application is pending review by our staff. This may take some time. You will receive an e-mail if your application is approved.
       redirecting_to: Your account is inactive because it is currently redirecting to %{acct}.
       view_strikes: View past strikes against your account
@@ -1464,7 +1462,6 @@ en:
       in_reply_not_found: The post you are trying to reply to does not appear to exist.
     open_in_web: Open in web
     over_character_limit: character limit of %{max} exceeded
-    over_uncut_character_limit: Please apply a CW to anything longer than %{max} characters.
     pin_errors:
       direct: Posts that are only visible to mentioned users cannot be pinned
       limit: You have already pinned the maximum number of posts
@@ -1623,9 +1620,6 @@ en:
     contrast: Mastodon (High contrast)
     default: Mastodon (Dark)
     mastodon-light: Mastodon (Light)
-    linernotes_dark: Linernotes Dark
-    fault: fault
-    lilymagic: lilymgic
   time:
     formats:
       default: "%b %d, %Y, %H:%M"
