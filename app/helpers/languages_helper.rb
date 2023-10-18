@@ -206,6 +206,7 @@ module LanguagesHelper
     'pt-PT': 'Português (Portugal)',
     'sr-Latn': 'Srpski (latinica)',
     'zh-CN': '简体中文',
+    'zh-YR': '简体中文（百合）',
     'zh-HK': '繁體中文（香港）',
     'zh-TW': '繁體中文（臺灣）',
   }.freeze
