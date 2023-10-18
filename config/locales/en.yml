@@ -1870,6 +1870,7 @@ en:
     errors:
       in_reply_not_found: The post you are trying to reply to does not appear to exist.
     over_character_limit: character limit of %{max} exceeded
+    over_uncut_character_limit: Please apply a CW to anything longer than %{max} characters.
     pin_errors:
       direct: Posts that are only visible to mentioned users cannot be pinned
       limit: You have already pinned the maximum number of posts
