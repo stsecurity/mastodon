@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-REPOSITORY_NAME = 'stsecurity/mastodon'
+REPOSITORY_NAME = 'mastodon/mastodon'
 
 namespace :repo do
   desc 'Generate the AUTHORS.md file'
