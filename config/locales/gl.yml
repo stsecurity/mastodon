@@ -574,7 +574,6 @@ gl:
       known_accounts:
         one: "%{count} conta coñecida"
         other: "%{count} contas coñecidas"
-        zero: Sen contas coñecidas
       moderation:
         all: Todo
         limited: Limitado
@@ -1034,7 +1033,6 @@ gl:
         shared_by_over_week:
           one: Compartido por unha persoa na última semana
           other: Compartido por %{count} persoas na última semana
-          zero: Non foi compartido na última semana
         title: Ligazóns en voga
         usage_comparison: Compartido %{today} veces hoxe, comparado con %{yesterday} onte
       not_allowed_to_trend: Non permitido como tendencia

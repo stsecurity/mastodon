@@ -578,7 +578,7 @@ lv:
       known_accounts:
         one: "%{count} zināms konts"
         other: "%{count} zināmi konti"
-        zero: Nav zināmu kontu
+        zero: "%{count} zināmu kontu"
       moderation:
         all: Visas
         limited: Ierobežotās
