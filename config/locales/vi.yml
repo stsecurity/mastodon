@@ -562,9 +562,7 @@ vi:
       destroyed_msg: Dữ liệu từ %{domain} đã lên lịch để xóa.
       empty: Không có máy chủ nào.
       known_accounts:
-        one: "%{count} người dùng đã biết"
-        other: "%{count} người dùng đã biết"
-        zero: Không có người dùng đã biết
+        other: "%{count} tài khoản đã biết"
       moderation:
         all: Tất cả
         limited: Hạn chế
