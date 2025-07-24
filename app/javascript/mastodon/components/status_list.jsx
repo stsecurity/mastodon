@@ -1,12 +1,18 @@
-import { debounce } from 'lodash';
-import React from 'react';
-import ImmutablePropTypes from 'react-immutable-proptypes';
 import PropTypes from 'prop-types';
-import StatusContainer from '../containers/status_container';
+
+import ImmutablePropTypes from 'react-immutable-proptypes';
 import ImmutablePureComponent from 'react-immutable-pure-component';
-import LoadGap from './load_gap';
+
+import { debounce } from 'lodash';
+
+import { TIMELINE_GAP, TIMELINE_SUGGESTIONS } from 'mastodon/actions/timelines';
+import { RegenerationIndicator } from 'mastodon/components/regeneration_indicator';
+import { InlineFollowSuggestions } from 'mastodon/features/home_timeline/components/inline_follow_suggestions';
+
+import { StatusQuoteManager } from '../components/status_quoted';
+
+import { LoadGap } from './load_gap';
 import ScrollableList from './scrollable_list';
-import RegenerationIndicator from 'mastodon/components/regeneration_indicator';
 
 export default class StatusList extends ImmutablePureComponent {
 
@@ -26,11 +32,19 @@ export default class StatusList extends ImmutablePureComponent {
     alwaysPrepend: PropTypes.bool,
     withCounters: PropTypes.bool,
     timelineId: PropTypes.string,
+    lastId: PropTypes.string,
+    bindToDocument: PropTypes.bool,
   };
 
   static defaultProps = {
     trackScroll: true,
   };
+
+  componentDidMount() {
+    this.columnHeaderHeight = parseFloat(
+      getComputedStyle(this.node.node).getPropertyValue('--column-header-height')
+    ) || 0;
+  }
 
   getFeaturedStatusCount = () => {
     return this.props.featuredStatusIds ? this.props.featuredStatusIds.size : 0;
@@ -45,32 +59,67 @@ export default class StatusList extends ImmutablePureComponent {
   };
 
   handleMoveUp = (id, featured) => {
-    const elementIndex = this.getCurrentStatusIndex(id, featured) - 1;
-    this._selectChild(elementIndex, true);
+    const index = this.getCurrentStatusIndex(id, featured);
+    this._selectChild(id, index, -1);
   };
-
+  
   handleMoveDown = (id, featured) => {
-    const elementIndex = this.getCurrentStatusIndex(id, featured) + 1;
-    this._selectChild(elementIndex, false);
+    const index = this.getCurrentStatusIndex(id, featured);
+    this._selectChild(id, index, 1);
   };
 
-  handleLoadOlder = debounce(() => {
-    this.props.onLoadMore(this.props.statusIds.size > 0 ? this.props.statusIds.last() : undefined);
-  }, 300, { leading: true });
+  _selectChild = (id, index, direction) => {
+    const listContainer = this.node.node;
+    let listItem = listContainer.querySelector(
+      // :nth-child uses 1-based indexing
+      `.item-list > :nth-child(${index + 1 + direction})`
+    );
+    
+    if (!listItem) {
+      return;
+    }
 
-  _selectChild (index, align_top) {
-    const container = this.node.node;
-    const element = container.querySelector(`article:nth-of-type(${index + 1}) .focusable`);
+    // If selected container element is empty, we skip it
+    if (listItem.matches(':empty')) {
+      this._selectChild(id, index + direction, direction);
+      return;
+    }
 
-    if (element) {
-      if (align_top && container.scrollTop > element.offsetTop) {
-        element.scrollIntoView(true);
-      } else if (!align_top && container.scrollTop + container.clientHeight < element.offsetTop + element.offsetHeight) {
-        element.scrollIntoView(false);
+    // Check if the list item is a post
+    let targetElement = listItem.querySelector('.focusable');
+
+    // Otherwise, check if the item contains follow suggestions or
+    // is a 'load more' button.
+    if (
+      !targetElement && (
+        listItem.querySelector('.inline-follow-suggestions') ||
+        listItem.matches('.load-more')
+      )
+    ) {
+      targetElement = listItem;
+    }
+
+    if (targetElement) {
+      const elementRect = targetElement.getBoundingClientRect();
+
+      const isFullyVisible =
+        elementRect.top >= this.columnHeaderHeight &&
+        elementRect.bottom <= window.innerHeight;
+
+      if (!isFullyVisible) {
+        targetElement.scrollIntoView({
+          block: direction === 1 ? 'start' : 'center',
+        });
       }
-      element.focus();
+
+      targetElement.focus();
     }
   }
+
+  handleLoadOlder = debounce(() => {
+    const { statusIds, lastId, onLoadMore } = this.props;
+    onLoadMore(lastId || (statusIds.size > 0 ? statusIds.last() : undefined));
+  }, 300, { leading: true });
 
   setRef = c => {
     this.node = c;
@@ -85,30 +134,43 @@ export default class StatusList extends ImmutablePureComponent {
     }
 
     let scrollableContent = (isLoading || statusIds.size > 0) ? (
-      statusIds.map((statusId, index) => statusId === null ? (
-        <LoadGap
-          key={'gap:' + statusIds.get(index + 1)}
-          disabled={isLoading}
-          maxId={index > 0 ? statusIds.get(index - 1) : null}
-          onClick={onLoadMore}
-        />
-      ) : (
-        <StatusContainer
-          key={statusId}
-          id={statusId}
-          onMoveUp={this.handleMoveUp}
-          onMoveDown={this.handleMoveDown}
-          contextType={timelineId}
-          scrollKey={this.props.scrollKey}
-          showThread
-          withCounters={this.props.withCounters}
-        />
-      ))
+      statusIds.map((statusId, index) => {
+        switch(statusId) {
+        case TIMELINE_SUGGESTIONS:
+          return (
+            <InlineFollowSuggestions
+              key='inline-follow-suggestions'
+            />
+          );
+        case TIMELINE_GAP:
+          return (
+            <LoadGap
+              key={'gap:' + statusIds.get(index + 1)}
+              disabled={isLoading}
+              param={index > 0 ? statusIds.get(index - 1) : null}
+              onClick={onLoadMore}
+            />
+          );
+        default:
+          return (
+            <StatusQuoteManager
+              key={statusId}
+              id={statusId}
+              onMoveUp={this.handleMoveUp}
+              onMoveDown={this.handleMoveDown}
+              contextType={timelineId}
+              scrollKey={this.props.scrollKey}
+              showThread
+              withCounters={this.props.withCounters}
+            />
+          );
+        }
+      })
     ) : null;
 
     if (scrollableContent && featuredStatusIds) {
       scrollableContent = featuredStatusIds.map(statusId => (
-        <StatusContainer
+        <StatusQuoteManager
           key={`f-${statusId}`}
           id={statusId}
           featured

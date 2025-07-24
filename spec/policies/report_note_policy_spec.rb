@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require 'pundit/rspec'
 
 RSpec.describe ReportNotePolicy do
-  let(:subject) { described_class }
-  let(:admin)   { Fabricate(:user, role: UserRole.find_by(name: 'Admin')).account }
+  subject { described_class }
+
+  let(:admin)   { Fabricate(:admin_user).account }
   let(:john)    { Fabricate(:account) }
 
   permissions :create? do
@@ -30,19 +30,17 @@ RSpec.describe ReportNotePolicy do
       end
     end
 
-    context 'when admin?' do
-      context 'when owner?' do
-        it 'permit' do
-          report_note = Fabricate(:report_note, account: john)
-          expect(subject).to permit(john, report_note)
-        end
+    context 'when owner?' do
+      it 'permit' do
+        report_note = Fabricate(:report_note, account: john)
+        expect(subject).to permit(john, report_note)
       end
+    end
 
-      context 'with !owner?' do
-        it 'denies' do
-          report_note = Fabricate(:report_note)
-          expect(subject).to_not permit(john, report_note)
-        end
+    context 'with !owner?' do
+      it 'denies' do
+        report_note = Fabricate(:report_note)
+        expect(subject).to_not permit(john, report_note)
       end
     end
   end
