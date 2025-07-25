@@ -9,11 +9,8 @@ base background and text
 /* status columns */
 .column>.scrollable,
 .status,
-    .status__content,
 .detailed-status,
     .detailed-status__action-bar,
-    .focusable:focus .detailed-status,
-    .focusable:focus .detailed-status__action-bar,
 .setting-text,
     .setting-text:active,
     .setting-text:focus,
@@ -31,7 +28,6 @@ base background and text
 .trends__header,
 /* new conversations */
 .conversation--unread,
-.conversation__content__names,
 /* search */
 .search__input,
     .search__input:focus,
@@ -54,6 +50,7 @@ base background and text
 .emoji-mart-scroll,
 .language-dropdown__dropdown,
 .language-dropdown__dropdown__results__item,
+.compose-form__highlightable,
 /* settings page */
 .simple_form textarea,
     .simple_form textarea:active,
@@ -83,13 +80,6 @@ base background and text
 .dashboard__counters > div > div, .dashboard__counters > div > a,
 .log-entry,
     .log-entry__header,
-.admin-wrapper .content .directory__tag h4,
-.simple_form select,
-.announcements-list__item,
-.filters-list__item,
-.permissions-list__item,
-.permissions-list__item__text__type,
-.applications-list__item, .filters-list__item,
 /* modals */
 .actions-modal,
     .actions-modal .status,
@@ -97,28 +87,19 @@ base background and text
     .status.light .display-name strong, .status.light .status__content,
 .boost-modal,
 .confirmation-modal,
-.dropdown-menu, .dropdown-menu__item a, .dropdown-menu__item button,
-.compare-history-modal,
-    .compare-history-modal .status__content,
+.dropdown-menu, .dropdown-menu__item a,
 .mute-modal,
     .block-modal .setting-toggle__label, .mute-modal .setting-toggle__label,
 .report-modal,
     .report-modal__statuses .status__content p,
     .report-modal__comment .setting-toggle__label,
-.report-dialog-modal,
-    .report-dialog-modal__lead,
-    .report-dialog-modal .poll__option.dialog-option > .poll__option__text,
-    .report-dialog-modal .status__content, .report-dialog-modal .status__content p,
 .list-editor,
     .list-editor .drawer__inner,
     .list-editor .drawer__inner.backdrop,
-    .list-adder__lists,
 .account__moved-note,
 .introduction__pager,
 .introduction__text p,
 .reactions-bar__item,
-.emoji-mart-category-label span,
-.emoji-picker-dropdown__menu,
 /* profile cards */
 .card__bar,
     .card>a:active .card__bar,
@@ -128,7 +109,6 @@ base background and text
     .directory__card__extra,
     .accounts-table__count,
     .directory__card__img,
-.scrollable .account-card,
 /* public pages */
 #new_user .lead,
 .landing .hero-widget__footer,
@@ -150,7 +130,6 @@ base background and text
     .landing-page .features-list .features-list__row .visual .fa,
     .landing-page__short-description h1,
     .landing-page .separator-or span,
-.box-widget,
     .contact-widget,
     .landing-page__information.contact-widget,
 .rich-formatting li,
@@ -166,18 +145,23 @@ base background and text
 .load-more,
 .button.button-secondary,
 .simple_form__overlay-area__overlay,
-/* about panel */
-.about__meta,
-.about__section,
-.about__section__title,
-.about__section__body,
-.prose,
-.about__header p,
-/* 4.0 mobile layout */
-.ui__header,
-.columns-area__panels__pane--navigational .navigation-panel {
+.box-widget,
+.rules-list,
+.rules-list__text {
   background: var(--bg);
   color: var(--text);
+}
+
+/* border radius for some elements*/
+.search__input,
+.navigation-bar,
+.column-header__wrapper,
+.contact-widget {
+  border-radius: 4px 4px 4px 4px;
+}
+
+.compose-form__buttons-wrapper {
+  border-radius: 0 0 4px 4px;
 }
 
 /*--------------------
@@ -185,26 +169,21 @@ override for bold text
 --------------------*/
 
 /* primary elements */
-.account__display-name strong,
-    .status__display-name strong,
+.status__display-name strong,
     .detailed-status__display-name strong,
     .card__bar .display-name strong,
     .directory__card__bar .display-name strong,
     .account__header__tabs__name h1,
     .account__header__extra__links a strong,
+    .status__display-name .display-name strong,
 .account__action-bar__tab strong, /* profile counters */
 .conversation__content__names a,
 .conversation--unread .conversation__content__relative-time,
-.report-dialog-modal .poll__option.dialog-option > .poll__option__text strong,
-.account-card__counters__item,
-.privacy-dropdown__option__content strong,
 /* settings page*/
 .dashboard__counters__num, .dashboard__counters__text,
 .log-entry a,
     .log-entry .username,
     .log-entry .target,
-.announcements-list__item__title,
-.filters-list__item__title,
 /* public pages */
 #new_user .lead strong,
 .landing-page h3,
@@ -215,8 +194,11 @@ override for bold text
     .directory__tag h4,
 .rich-formatting h3,
     .rich-formatting h4,
+    .rich-formatting h2,
+    .rich-formatting,
 .public-layout .public-account-header__tabs__tabs .counter .counter-number,
-.account__header__fields dt {
+.account__header__fields dt,
+.hashtag-header__header h1 {
   color: var(--textBold);
 }
 
@@ -225,8 +207,7 @@ override for muted text
 ---------------------*/
 
 /* secondary elements */
-.display-name__account,
-    .account .account__display-name,
+.account .account__display-name,
     .card__bar .display-name span,
     .directory__card__bar .display-name span,
     .accounts-table__count small,
@@ -251,8 +232,6 @@ override for muted text
     .compose-form .compose-form__buttons-wrapper .character-counter__wrapper .character-counter,
     .compose-form .autosuggest-textarea__textarea::placeholder,
     .compose-form .spoiler-input__input::placeholder,
-    .privacy-dropdown__option__content,
-    .language-dropdown__dropdown__results__item__common-name,
 .upload-progress,
 .search__icon .fa,
     .search__icon .fa-times-circle,
@@ -269,16 +248,9 @@ a.table-action-link,
     button.table-action-link,
 .status__wrapper--filtered,
 .conversation__content__relative-time,
-.status-check-box__status .detailed-status__display-name,
-.account-card__counters__item small,
-.about__meta h4,
-.poll__link,
-.poll__footer,
 /* settings page */
 .dashboard__counters__label,
 .log-entry__timestamp,
-.announcements-list__item__meta,
-.filters-list__item__meta,
 /* public pages */
 .landing-page__short-description h1 small,
     .landing-page__short-description h1 small span,
@@ -287,7 +259,10 @@ a.table-action-link,
     .public-layout .public-account-bio__extra,
     .public-layout .public-account-header__tabs__tabs .counter,
 .load-more,
-.account__disclaimer {
+.account__disclaimer,
+.hashtag-header,
+.hashtag-bar,
+.character-counter {
   color: var(--textMuted);
 }
 
@@ -316,23 +291,8 @@ a.table-action-link,
 .account__section-headline,
 .notification__filter-bar,
 .actions-modal .dropdown-menu__separator,
-.actions-modal .status,
-.report-dialog-modal .poll__option.dialog-option,
-.poll__option input[type="text"],
-.poll__input,
-.compose-form__poll-wrapper,
-.compose-form__poll-wrapper .poll__footer,
-.dropdown-menu__item.edited-timestamp__history__item {
+.actions-modal .status {
   border-color: var(--textMuted);
-}
-
-.table td,
-.table th,
-.ui__header,
-.columns-area__panels__pane--navigational .navigation-panel,
-.dropdown-menu__container__header,
-.list-adder .list {
-  border-color: var(--bgPage);
 }
 
 .account__header__account-note,
@@ -346,7 +306,10 @@ a.table-action-link,
 .table > thead > tr > th,
 .applications-list__item,
 .filters-list__item,
-.permissions-list__item {
+.permissions-list__item,
+.detailed-status__wrapper-direct .detailed-status__action-bar,
+.compose-form__highlightable,
+.search__input {
   border-color: transparent;
 }
 
@@ -357,13 +320,34 @@ a.table-action-link,
   border-color: transparent transparent var(--bg);
 }
 
-/* fix profile directory card truncation */
-.scrollable .account-card__bio::after,
-.account-card__bio::after {
-  background: none;
+.notification {
+  background: var(--bgPage);
 }
 
+/*settings page administration section text color*/
+.dashboard__widgets__users a.name-tag {
+  color: var(--text);
+}
+.dashboard__widgets a:not(.name-tag) {
+  color: var(--text) !important;
+}
+
+.account-card .account-card__bio {
+  color: var(--textHead) !important;
+}
+
+/*fixing direct messages*/
+.status__content,
+.conversation__content__names {
+  color: var(--text);
+}
 /* poll vote bars */
 .poll__chart {
   background: var(--textMuted);
+}
+
+/* fix focusing on status overriding theme */
+.focusable:focus .detailed-status,
+.focusable:focus .detailed-status__action-bar {
+  background: none;
 }
