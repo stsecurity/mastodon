@@ -107,7 +107,7 @@ MISC TWEAKS
   padding-inline-end: 0px !important;
 }
 /* add border radius to navigation panel links*/
-.navigation-panel__menu > .column-link {
+.navigation-panel__menu > .column-link, .navigation-panel__list-panel__header > .column-link {
   border-radius: 4px;
   margin-top: 5px;
 }
