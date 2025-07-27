@@ -2,7 +2,14 @@
 MISC TWEAKS
 ---------*/
 
-/* replace elephant friend with vinyl */
+/* replace two logos */
+.drawer__inner__mastodon {
+  background: var(--mascotUrl)
+    no-repeat bottom center / contain !important;
+}
+.drawer__inner__mastodon > img {
+  display: none;
+}
 .column-link--logo {
   background: var(--mascotUrl)
     no-repeat bottom center / contain !important;
@@ -82,9 +89,27 @@ MISC TWEAKS
   gap: 0px !important;
 }
 
+/* notification column background */
+.notification-ungrouped {
+  background: var(--bgPageTransparent);
+}
+/* notification column item padding */
+.notification-ungrouped .status:not(.status--is-quote) {
+  padding: 3px;
+}
+/* notification column menu description text color*/
+.app-form__toggle__label .hint {
+  color: var(--text);
+}
+
 /* clear the small line after some navigation panel links*/
 .navigation-panel__list-panel__header {
   padding-inline-end: 0px !important;
+}
+/* add border radius to navigation panel links*/
+.navigation-panel__menu > .column-link {
+  border-radius: 4px;
+  margin-top: 5px;
 }
 
 /* make the account section at the top of compose form a bit bigger for its background color*/
