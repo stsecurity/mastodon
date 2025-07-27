@@ -6,6 +6,7 @@ MISC TWEAKS
 .column-link--logo {
   background: var(--mascotUrl)
     no-repeat bottom center / contain !important;
+    min-height: 40px;
 }
 .column-link--logo > svg {
   display: none;
