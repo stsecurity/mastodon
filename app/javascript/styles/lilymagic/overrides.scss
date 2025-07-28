@@ -101,6 +101,10 @@ MISC TWEAKS
 .app-form__toggle__label .hint {
   color: var(--text);
 }
+/* notification column menu option background*/
+.privacy-dropdown__option {
+  background: var(--dropdown-background-color);
+}
 
 /* clear the small line after some navigation panel links*/
 .navigation-panel__list-panel__header {
