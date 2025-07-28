@@ -128,3 +128,19 @@ MISC TWEAKS
   padding-bottom: 15px;
   padding-left: 10px;
 }
+
+/* about page*/
+.prose {
+  color: var(--text);
+}
+.rules-list {
+  background: none;
+}
+
+/* directory*/
+.filter-form {
+  background: var(--bgHead);
+}
+.account-card {
+  background: var(--background-color);
+}
