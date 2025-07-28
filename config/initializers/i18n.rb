@@ -96,6 +96,7 @@ Rails.application.configure do
     :vi,
     :zgh,
     :'zh-CN',
+    :'zh-YR',
     :'zh-HK',
     :'zh-TW',
   ]

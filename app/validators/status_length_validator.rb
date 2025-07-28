@@ -11,6 +11,7 @@ class StatusLengthValidator < ActiveModel::Validator
 
     status.errors.add(:text, I18n.t('statuses.over_character_limit', max: MAX_CHARS)) if too_long?(status)
     status.errors.add(:text, I18n.t('statuses.over_uncut_character_limit', max: MAX_UNCUT_CHARS)) if too_long_uncut?(status)
+
   end
 
   private
@@ -30,7 +31,7 @@ class StatusLengthValidator < ActiveModel::Validator
   def countable_uncut_length(status)
     countable_text(status.text).mb_chars.grapheme_length
   end
-  
+
   def countable_spoiler_length(status)
     status.spoiler_text.mb_chars.grapheme_length
   end
