@@ -33,6 +33,10 @@ body.app-body,
     .focusable:focus .status.status-direct,
     .status-direct .status__content,
     .notification-favourite .status.status-direct,
+    .status__wrapper-direct,
+    .detailed-status__wrapper-direct .detailed-status,
+    .detailed-status__wrapper-direct .detailed-status__action-bar,
+    .detailed-status__wrapper-direct .status__content,
 /* column preferences */
 /*.column-settings__section,*/
     .column-header__collapsible,
@@ -124,6 +128,8 @@ override for bold text
     .account__section-headline button.active,
     .notification__filter-bar a.active,
     .notification__filter-bar button.active,
+.about__domain-blocks__domain h6,
+.account__display-name .display-name strong,
 /* public pages */
 .information-board__section,
     .information-board__section span:last-child,
@@ -149,6 +155,7 @@ override for muted text
     .getting-started__footer p,
 .column-subheading,
 .account__section-headline a,
+.display-name__account,
 .status-direct .icon-button,
     .status-direct .display-name,
     .status-direct .status__relative-time,
@@ -198,20 +205,13 @@ body .neutral-hint, .admin-wrapper .content .neutral-hint,
   background: var(--bgPage);
 }
 
-/*transparent background for columns*/
-.columns-area__panels__pane__inner,
-.columns-area__panels__main,
-.column,
-.drawer {
-  background: var(--bgPageTransparent);
-}
-.tabs-bar__wrapper {
-  background: rgba(0, 0, 0, 0);
-}
-
-/*filter button color when focused*/
-.column-header__button.active {
-  background: var(--bgPage);
+.dismissable-banner,
+.about__domain-blocks,
+.emoji-mart-search input,
+.compose-panel hr,
+.navigation-panel hr,
+.detailed-status {
+  border-color: transparent;
 }
 
 /*font color at setting page*/
@@ -227,6 +227,9 @@ label.required,
   border-radius: 4px;
 }
 
-.activity-stream {
-  background: var(--bg);
+/* account fields */
+.account__header__bio .account__header__fields .verified a,
+.account__header__bio .account__header__fields .verified dd,
+.account__header__bio .account__header__fields .verified dt {
+  background: transparent;
 }
