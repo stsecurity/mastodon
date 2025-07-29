@@ -217,6 +217,7 @@ module LanguagesHelper
   # We need to be able to filter these
   ISO_639_1_REGIONAL = {
     'zh-CN': ['Chinese (China)', '简体中文'].freeze,
+    'zh-YR': ['Chinese (China)', '简体中文（百合）'].freeze,
     'zh-HK': ['Chinese (Hong Kong)', '繁體中文（香港）'].freeze,
     'zh-TW': ['Chinese (Taiwan)', '繁體中文（臺灣）'].freeze,
     'zh-YUE': ['Cantonese', '廣東話'].freeze,
