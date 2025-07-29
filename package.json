@@ -1,5 +1,5 @@
 {
-  "name": "@stsecurity/mastodon",
+  "name": "@mastodon/mastodon",
   "license": "AGPL-3.0-or-later",
   "packageManager": "yarn@4.9.2",
   "engines": {
