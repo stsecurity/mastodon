@@ -66,6 +66,10 @@ class StatusEdit < ApplicationRecord
 
   alias preloadable_poll poll
 
+  def with_media?
+    ordered_media_attachments.any?
+  end
+
   def emojis
     return @emojis if defined?(@emojis)
 
