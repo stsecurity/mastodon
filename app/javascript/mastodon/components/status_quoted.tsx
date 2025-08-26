@@ -123,7 +123,8 @@ export const QuotedStatus: React.FC<{
   const status = useAppSelector((state) =>
     quotedStatusId ? state.statuses.get(quotedStatusId) : undefined,
   );
-  const isQuoteLoaded = !!status && !status.get('isLoading');
+
+  const shouldLoadQuote = !status?.get('isLoading') && quoteState !== 'deleted';
 
   const shouldLoadQuote = !status?.get('isLoading') && quoteState !== 'deleted';
 
