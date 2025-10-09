@@ -20,5 +20,11 @@ module Admin
     def pending_tags
       ::Trends::TagFilter.new(status: :pending_review).results
     end
+
+    private
+
+    def pending_tags
+      ::Trends::TagFilter.new(status: :pending_review).results
+    end
   end
 end
