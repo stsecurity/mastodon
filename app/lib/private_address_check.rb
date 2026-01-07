@@ -29,7 +29,9 @@ module PrivateAddressCheck
     IPAddr.new('fc00::/7'),        # Unique local address
     IPAddr.new('3fff::/20'),       # Addresses used in documentation and example source code
     IPAddr.new('ff00::/8'),        # Multicast
-  ].freeze
+  ]).freeze
+
+  module_function
 
   module_function
 
