@@ -72,6 +72,7 @@ class ConnectionPool::SharedTimedStack
       @tagged_queue[throw_away_connection.site].delete(throw_away_connection)
       throw_away_connection.close
       @create_block.call(preferred_tag)
+      throw_away_connection.close
     elsif @created != @max
       connection = @create_block.call(preferred_tag)
       @created += 1
