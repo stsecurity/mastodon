@@ -73,6 +73,7 @@ class ConnectionPool::SharedTimedStack
       throw_away_connection.close
       @create_block.call(preferred_tag)
       throw_away_connection.close
+      @create_block.call(preferred_tag)
     elsif @created != @max
       connection = @create_block.call(preferred_tag)
       @created += 1
