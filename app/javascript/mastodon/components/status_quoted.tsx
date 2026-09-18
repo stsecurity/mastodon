@@ -126,8 +126,6 @@ export const QuotedStatus: React.FC<{
 
   const shouldLoadQuote = !status?.get('isLoading') && quoteState !== 'deleted';
 
-  const shouldLoadQuote = !status?.get('isLoading') && quoteState !== 'deleted';
-
   const accountId: string | null = status?.get('account', null) as
     | string
     | null;
